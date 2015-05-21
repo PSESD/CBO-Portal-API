@@ -11,12 +11,18 @@ function Rest(router, Api) {
  */
 Rest.prototype.handleRoutes= function(router, Api) {
 	var indexController = Api.controller('Index');
+	var addressController = Api.controller('AddressController');
 	var authController = Api.controller('Auth');
 
 	router.get('/', indexController.index);
 	// Create endpoint handlers for /
-	//router.route('/')
-	//  .get(authController.isAuthenticated, indexController.index);
+	//router
+	//  .get('/address/all', addressController.all)
+	//  .post('/address', addressController.create)
+	//  .put('/address/:id', addressController.save)
+	//  .delete('/address/:id', addressController.delete);
+
+
 
 };
 

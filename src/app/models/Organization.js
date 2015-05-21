@@ -17,6 +17,11 @@ var OrganizationSchema = new mongoose.Schema({
     last_updated: { type: Date, required: true, default: Date.now },
     last_updated_by: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 });
+OrganizationSchema.virtual('Id')
+.get(function(){
+    return this.id;
+});
+
 
 // Export the Mongoose model
 module.exports = mongoose.model('Organization', OrganizationSchema);

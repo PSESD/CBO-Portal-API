@@ -87,11 +87,20 @@ Api.prototype.registerRoute = function(){
  */
 Api.prototype.connectDb = function() {
     var dbUri = 'mongodb://'+this.config.get('db.mongo.host')+'/'+this.config.get('db.mongo.name');
-    console.log("DB URI: " + dbUri);
+    console.log("[%s] DB URI: " + dbUri, app.get('env'));
     this.mongo.connect(dbUri);
     this.configureExpress(this.db);
     
 };
+Api.prototype.migrate = function(){
+    if(app.get('env') !== 'production'){
+        /**
+         * Run Process to migrate data
+         */
+        var populateCbo = require('./scripts/populate-cbo');
+        populateCbo.run();
+    }
+}
 /**
  * Config Express and Register Route
  * @param db
@@ -128,6 +137,10 @@ Api.prototype.configureExpress = function(db) {
         });
     }
     /**
+     * Call migration
+     */
+    self.migrate();
+    /**
      * Register Route
      */
     self.registerRoute();
@@ -158,7 +171,7 @@ try {
     new Api();
 } catch(e){
     console.log(e);
-    rollbar.reportMessage(e.message, 'error', function(rollbarErr) {
+    rollbar.reportMessage(e, 'error', function(rollbarErr) {
         console.log('CALL ROLLBAR: ' + rollbarErr);
         process.exit(1);
     });

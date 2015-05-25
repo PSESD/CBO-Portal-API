@@ -6,4 +6,7 @@ Thumbs.db
 /.idea
 /src/node_modules
 /src/npm-debug.log
+<<<<<<< HEAD
 *.log
+=======
+>>>>>>> c433120ce251bfa15d95abec181bb1507c478c03

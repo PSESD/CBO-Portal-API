@@ -23,8 +23,8 @@ To install dependencies enter project folder and run following command:
 
 Install the client library using git:
 
-    $ git clone https://github.com/PSESD/CBO-Portal-API.git
-    $ cd CBO-Portal-API
+    $ git clone https://github.com/PSESD/CBO-Portal-Auth.git
+    $ cd CBO-Portal-Auth
     $ npm install
 
 
@@ -75,6 +75,34 @@ provide specs to your contribution.
 
 ## Make Requests
 
+#### Register a new user
+
+```
+$ http POST http://localhost:3000/api/users username=test password=your_password
+```
+#### User add a new client
+
+```
+$ http -a test:your_password POST http://localhost:3000/api/clients client_id=client name=client client_secret=secret
+```
+
+#### User get authorised page
+
+```
+$ http -a test:your_password GET http://localhost:3000/api/oauth2/authorize client_id==client response_type==code redirect_uri==http://localhost:3000
+```
+
+#### User to authorise an access code
+
+```
+$ http -a test:your_password -f POST http://localhost:3000/api/oauth2/authorize transaction_id=<transaction_id>
+```
+
+#### User access code to get a token
+
+```
+$ http -a client:secret -f POST http://localhost:3000/api/oauth2/authorize code=<accessCode> grant_type=authorization_code redirect_uri=http://localhost:3000
+```
 
 ## Coding guidelines
 
@@ -83,15 +111,15 @@ Follow [github](https://github.com/styleguide/) guidelines.
 
 ## Feedback
 
-Use the [issue tracker](https://github.com/PSESD/CBO-Portal-API/issues) for bugs.
+Use the [issue tracker](https://github.com/PSESD/CBO-Portal-Auth/issues) for bugs.
 [Mail](mailto:support@upwardstech.com) us
 for any idea that can improve the project.
 
 
 ## Links
 
-* [GIT Repository](https://github.com/PSESD/CBO-Portal-API)
-* [Documentation](https://github.com/PSESD/CBO-Portal-API)
+* [GIT Repository](https://github.com/PSESD/CBO-Portal-Auth)
+* [Documentation](https://github.com/PSESD/CBO-Portal-Auth)
 
 
 ## Authors
@@ -106,7 +134,7 @@ Special thanks to the following people for submitting patches.
 
 ## Changelog
 
-See [CHANGELOG](https://github.com/PSESD/CBO-Portal-API/master/CHANGELOG.md)
+See [CHANGELOG](https://github.com/PSESD/CBO-Portal-Auth/master/CHANGELOG.md)
 
 
 ## Copyright

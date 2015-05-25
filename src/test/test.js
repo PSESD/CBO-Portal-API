@@ -1,15 +1,12 @@
 'use strict';
 
-process.env.NODE_ENV = 'test';
 var expect = require( 'chai' ).expect;
 var request = require( 'supertest' );
 var cheerio = require( 'cheerio' );
 var url = 'http://localhost:3000';
-var config = require('config');
-var dbUri = 'mongodb://'+config.get('db.mongo.host')+'/'+config.get('db.mongo.name');
-console.log(dbUri);
-var mongoose = require( 'mongoose' )
-    , clearDB = require( 'mocha-mongoose' )( dbUri, {noClear: true} );
+var dbURI = 'mongodb://localhost/cbo_test'
+    , mongoose = require( 'mongoose' )
+    , clearDB = require( 'mocha-mongoose' )( dbURI, {noClear: true} );
 
 describe( 'OAuth2', function () {
 
@@ -26,7 +23,7 @@ describe( 'OAuth2', function () {
 
     before( function (done) {
         if (mongoose.connection.db) return done();
-        mongoose.connect( dbUri, done );
+        mongoose.connect( dbURI, done );
     } );
 
     before( function (done) {

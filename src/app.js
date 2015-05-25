@@ -2,11 +2,12 @@ var express = require("express");
 var mongoose = require('mongoose');
 var bodyParser  = require("body-parser");
 var app  = express();
+var ejs = require('ejs');
 var session = require('express-session');
 var passport = require('passport');
 var rollbar = require('rollbar');
 var methodOverride = require('method-override');
-var port = process.env.PORT || 4000;
+var port = process.env.PORT || 3000;
 var config = require('config');
 var rollbarAccessToken = config.get('rollbar.access_token');
 if(rollbarAccessToken) {
@@ -76,7 +77,7 @@ Api.prototype.registerRoute = function(){
         var basename = path.basename(file, '.js');
         var rest = self.route(basename);
         if(basename === 'rest'){
-            basename = '';
+            basename = 'api';
         }
         app.use('/'+basename, router);
         var rest_router = new rest(router,self);
@@ -105,6 +106,8 @@ Api.prototype.configureExpress = function(db) {
 
     app.use(methodOverride());
 
+    // Set view engine to ejs
+    app.set('view engine', 'ejs');
     // Use the passport package in our application
     app.use(passport.initialize());
 
@@ -160,7 +163,5 @@ try {
     console.log(e);
     rollbar.reportMessage(e.message, 'error', function(rollbarErr) {
         console.log('CALL ROLLBAR: ' + rollbarErr);
-        process.exit(1);
     });
-
 }

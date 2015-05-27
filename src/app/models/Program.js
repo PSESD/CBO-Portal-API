@@ -8,9 +8,9 @@ var mongoose = require('mongoose');
 var ProgramSchema = new mongoose.Schema({
     name: { type: String, required: true, unique: true },
     created: { type: Date, required: true, default: Date.now },
-    creator: { type: Schema.Types.ObjectId, ref: 'User' },
+    creator: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
     last_updated: { type: Date, required: true, default: Date.now },
-    last_updated_by: { type: Schema.Types.ObjectId, ref: 'User' }
+    last_updated_by: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 });
 
 // Export the Mongoose model

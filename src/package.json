@@ -14,6 +14,8 @@
     "crypto": "0.0.3",
     "express": "^4.12.3",
     "express-session": "^1.11.1",
+    "express-subdomain": "^1.0.3",
+    "fast-csv": "^0.6.0",
     "method-override": "^2.3.3",
     "mocha": "^2.2.4",
     "mocha-mongoose": "^1.0.4",
@@ -24,9 +26,11 @@
     "passport": "^0.2.1",
     "passport-http": "^0.2.2",
     "passport-http-bearer": "^1.0.1",
+    "psl": "^1.1.5",
     "rollbar": "^0.5.3",
     "should": "^6.0.1",
-    "supertest": "^0.15.0"
+    "supertest": "^0.15.0",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {},
   "scripts": {

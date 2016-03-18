@@ -13,6 +13,11 @@ var util = require('util');
 var extend = util._extend;
 var _ = require('underscore');
 var UserController = new BaseController(User).crud();
+
+UserController.sorter = function(st){
+    return [st.first_name, st.last_name];
+};
+
 /**
  * Get Current User Login
  * @param req
@@ -61,7 +66,7 @@ UserController.deleteByEmail = function (req, res) {
 
             });
 
-            res.sendSuccess('Successfully deleted');
+            res.sendSuccess(res.__('data_deleted'));
 
         });
 
@@ -75,7 +80,7 @@ UserController.deleteByEmail = function (req, res) {
 
         if (err)  { return res.sendError(err); }
 
-        if(!user) { return res.sendError('User not found'); }
+        if(!user) { return res.sendError(res.__('user_not_found')); }
 
         cb(user._id, req);
 
@@ -104,7 +109,7 @@ UserController.updateAccount = function (req, res) {
 
             if('retype_password' in req.body && req.body.password !== req.body.retype_password){
 
-                return res.sendError('Password didn\'t match');
+                return res.sendError(res.__('password_not_match'));
 
             } else if(!req.body.password){
 
@@ -148,7 +153,7 @@ UserController.updateAccount = function (req, res) {
 
             if (err)  { return res.sendError(err); }
 
-            res.sendSuccess('Successfully updated!', obj);
+            res.sendSuccess(res.__('data_updated'), obj);
 
         });
 
@@ -181,7 +186,7 @@ UserController.save = function (req, res) {
 
             if('retype_password' in req.body && req.body.password !== req.body.retype_password){
 
-                return res.sendError('Password didn\'t match');
+                return res.sendError(res.__('password_not_match'));
 
             } else if(!req.body.password){
 
@@ -218,7 +223,7 @@ UserController.save = function (req, res) {
         if(req.user._id.toString() === obj._id.toString() && req.user.isAdmin()){
 
             if(role.indexOf('case-worker') !== -1) {
-                return res.sendError("Admin never be able to downgrade itself to a case worker");
+                return res.sendError(res.__('admin_never_able_to_downgrade'));
             }
 
         }
@@ -242,7 +247,7 @@ UserController.save = function (req, res) {
 
                 if (err)  { return res.sendError(err); }
 
-                res.sendSuccess('Successfully updated!', user);
+                res.sendSuccess(res.__('data_updated'), user.toJSON());
 
             });
 
@@ -252,7 +257,7 @@ UserController.save = function (req, res) {
 
                 if (err)  { return res.sendError(err); }
 
-                res.sendSuccess('Successfully updated!', user);
+                res.sendSuccess(res.__('data_updated'), user.toJSON());
 
             });
         }
@@ -272,7 +277,7 @@ UserController.cleanAll = function(req, res){
     var emails = [ 'test@test.com', 'support@upwardstech.com' ];
 
     if(!email || emails.indexOf(email) === -1) {
-        return res.sendError('Mandatory parameters was empty');
+        return res.sendError(res.__('parameter_required'));
     }
 
     User.findOne({ email: email }, function(err, user){
@@ -281,7 +286,7 @@ UserController.cleanAll = function(req, res){
 
         User.removeDeep(user._id, function(err){ console.log(err);});
 
-        res.sendSuccess('Done');
+        res.sendSuccess(res.__('done'));
 
     });
 
@@ -363,7 +368,7 @@ UserController.getByUserId = function(req, res){
 
                 if (err)  { return res.sendError(err); }
 
-                res.sendSuccess(null, students);
+                res.sendSuccess(null, _.sortBy(students, UserController.sorter));
 
             });
 
@@ -376,7 +381,7 @@ UserController.getByUserId = function(req, res){
             if (err)  { return res.sendError(err); }
 
             if (!currUser) {
-                return res.sendError('User not found!');
+                return res.sendError(res.__('user_not_found'));
             }
 
             currUser.getCurrentPermission(organizationId);
@@ -385,7 +390,7 @@ UserController.getByUserId = function(req, res){
 
                 if (err)  { return res.sendError(err); }
 
-                res.sendSuccess(null, students);
+                res.sendSuccess(null, _.sortBy(students, UserController.sorter));
 
             });
 
@@ -413,7 +418,7 @@ UserController.postByUserId = function(req, res){
         if (err)  { return res.sendError(err); }
 
         if(!currUser) {
-            return res.sendError('User not found!');
+            return res.sendError(res.__('user_not_found'));
         }
 
         var obj = new Student(req.body);
@@ -447,7 +452,7 @@ UserController.postByUserId = function(req, res){
 
                 if (err) { return res.sendError(err); }
 
-                res.sendSuccess('Successfully Added', obj);
+                res.sendSuccess(res.__('data_added'), obj);
             });
 
         });
@@ -475,7 +480,7 @@ UserController.getStudentUserById = function(req, res){
         if (err)  { return res.sendError(err); }
 
         if(!currUser) {
-            return res.sendError('User not found!');
+            return res.sendError(res.__('user_not_found'));
         }
 
         currUser.getCurrentPermission(organizationId);
@@ -484,7 +489,7 @@ UserController.getStudentUserById = function(req, res){
 
             if (err)  { return res.sendError(err); }
 
-            res.sendSuccess(null, students);
+            res.sendSuccess(null, _.sortBy(students, UserController.sorter));
 
         });
 
@@ -513,7 +518,7 @@ UserController.putStudentUserById = function(req, res){
         if (err)  { return res.sendError(err); }
 
         if(!currUser) {
-            return res.sendError('User not found!');
+            return res.sendError(res.__('user_not_found'));
         }
 
         Student.findOne({ _id: studentId, organization: ObjectId(organizationId) }, function (err, obj) {
@@ -521,7 +526,7 @@ UserController.putStudentUserById = function(req, res){
             if (err) { return res.sendError(err); }
 
             if (!obj) {
-                return res.sendError('Data not found');
+                return res.sendError(res.__('data_not_found'));
             }
 
             for (var prop in req.body) {
@@ -556,7 +561,7 @@ UserController.putStudentUserById = function(req, res){
 
                     if (err) { return res.sendError(err); }
 
-                    res.sendSuccess('Successfully Updated!', obj);
+                    res.sendSuccess(res.__('data_updated'), obj);
 
                 });
 
@@ -588,7 +593,7 @@ UserController.deleteStudentUserById = function(req, res){
         if (err)  { return res.sendError(err); }
 
         if(!currUser) {
-            return res.sendError('User not found!');
+            return res.sendError(res.__('user_not_found'));
         }
 
         Student.findOne({ _id: studentId, organization: ObjectId(organizationId) }, function (err, student) {
@@ -596,7 +601,7 @@ UserController.deleteStudentUserById = function(req, res){
             if (err)  { return res.sendError(err); }
 
             if(!student) {
-                return res.sendError('Student not found!');
+                return res.sendError(res.__('record_not_found', 'Student'));
             }
 
             var allpermission = [];
@@ -627,9 +632,11 @@ UserController.deleteStudentUserById = function(req, res){
 
             User.where({_id: currUser._id}).update({$set: {permissions: allpermission}, last_updated: new Date(), last_updated_by: req.user.userId }, function (err, updated) {
 
-                if (err)  { return res.sendError(err); }
+                if (err)  {
+                    return res.sendError(err);
+                }
 
-                res.sendSuccess('Successfully Deleted!');
+                res.sendSuccess(res.__('data_deleted'));
 
             });
 

@@ -1,9 +1,15 @@
 'use strict';
 var fs = require('fs');
 var util = require('util');
-
-function CodeSet(){
+/**
+ *
+ * @param file
+ * @constructor
+ */
+function CodeSet(file){
     this.filename = __dirname + '/config.js';
+    this.file = file || require(__dirname + '/json-codeset.json');
+
 }
 
 /**
@@ -19,9 +25,10 @@ CodeSet.prototype.get = function(){
 /**
  *
  */
-CodeSet.prototype.parse = function(){
+CodeSet.prototype.parse = function(done){
 
-    var file = require(__dirname + '/json-codeset.json');
+
+    var file = this.file;
 
     var codeSets = {};
 
@@ -52,6 +59,10 @@ CodeSet.prototype.parse = function(){
         console.log('It\'s saved!');
 
         console.log(Object.keys(require(__dirname + '/config.js')));
+
+        if(typeof done === 'function') {
+            done();
+        }
 
     });
 

@@ -1,0 +1,78 @@
+10713556 =>
+	05/19/2014 - 05/25/2014: 05/22/2014
+
+------------------------------------------------------------------------------------------------------------------------------------------
+<event>
+                <calendarEventDate>2014-05-22</calendarEventDate>
+                <attendanceStatus>ExcusedAbsence</attendanceStatus>
+                <attendanceEventType>DailyAttendance</attendanceEventType>
+                <attendanceValue>0.0</attendanceValue>
+                <raw:source>
+                    <raw:calendarEventDate>05/22/2014</raw:calendarEventDate>
+                    <raw:attendanceStatus>ExcusedAbsence</raw:attendanceStatus>
+                    <raw:attendanceEventType>DailyAttendance</raw:attendanceEventType>
+                    <raw:attendanceValue>0.0</raw:attendanceValue>
+                    <raw:dayAbsent>1.00</raw:dayAbsent>
+                    <raw:dayUnexcused>.00</raw:dayUnexcused>
+                </raw:source>
+            </event>
+<event>
+                <calendarEventDate>2014-05-22</calendarEventDate>
+                <attendanceStatus>UnexcusedAbsence</attendanceStatus>
+                <attendanceEventType>ClassSectionAttendance</attendanceEventType>
+                <absentAttendanceCategory>13303</absentAttendanceCategory>
+                <timeTablePeriod>6</timeTablePeriod>
+                <psesd:absentReasonDescription>Excused Absence</psesd:absentReasonDescription>
+                <raw:source>
+                    <raw:calendarEventDate>05/22/2014</raw:calendarEventDate>
+                    <raw:attendanceStatus>Unexcused</raw:attendanceStatus>
+                    <raw:attendanceEventType>ClassSectionAttendance</raw:attendanceEventType>
+                    <raw:absentAttendanceCategory>Excused Absence</raw:absentAttendanceCategory>
+                    <raw:timeTablePeriod>6th</raw:timeTablePeriod>
+                </raw:source>
+            </event>
+<event>
+                <calendarEventDate>2014-05-22</calendarEventDate>
+                <attendanceStatus>UnexcusedAbsence</attendanceStatus>
+                <attendanceEventType>ClassSectionAttendance</attendanceEventType>
+                <absentAttendanceCategory>13303</absentAttendanceCategory>
+                <timeTablePeriod>7</timeTablePeriod>
+                <psesd:absentReasonDescription>Excused Absence</psesd:absentReasonDescription>
+                <raw:source>
+                    <raw:calendarEventDate>05/22/2014</raw:calendarEventDate>
+                    <raw:attendanceStatus>Unexcused</raw:attendanceStatus>
+                    <raw:attendanceEventType>ClassSectionAttendance</raw:attendanceEventType>
+                    <raw:absentAttendanceCategory>Excused Absence</raw:absentAttendanceCategory>
+                    <raw:timeTablePeriod>7th</raw:timeTablePeriod>
+                </raw:source>
+            </event>
+<event>
+                <calendarEventDate>2014-05-22</calendarEventDate>
+                <attendanceStatus>UnexcusedAbsence</attendanceStatus>
+                <attendanceEventType>ClassSectionAttendance</attendanceEventType>
+                <absentAttendanceCategory>13303</absentAttendanceCategory>
+                <timeTablePeriod>2</timeTablePeriod>
+                <psesd:absentReasonDescription>Excused Absence</psesd:absentReasonDescription>
+                <raw:source>
+                    <raw:calendarEventDate>05/22/2014</raw:calendarEventDate>
+                    <raw:attendanceStatus>Unexcused</raw:attendanceStatus>
+                    <raw:attendanceEventType>ClassSectionAttendance</raw:attendanceEventType>
+                    <raw:absentAttendanceCategory>Excused Absence</raw:absentAttendanceCategory>
+                    <raw:timeTablePeriod>2nd</raw:timeTablePeriod>
+                </raw:source>
+            </event>
+<event>
+                <calendarEventDate>2014-05-22</calendarEventDate>
+                <attendanceStatus>UnexcusedAbsence</attendanceStatus>
+                <attendanceEventType>ClassSectionAttendance</attendanceEventType>
+                <absentAttendanceCategory>13303</absentAttendanceCategory>
+                <timeTablePeriod>4</timeTablePeriod>
+                <psesd:absentReasonDescription>Excused Absence</psesd:absentReasonDescription>
+                <raw:source>
+                    <raw:calendarEventDate>05/22/2014</raw:calendarEventDate>
+                    <raw:attendanceStatus>Unexcused</raw:attendanceStatus>
+                    <raw:attendanceEventType>ClassSectionAttendance</raw:attendanceEventType>
+                    <raw:absentAttendanceCategory>Excused Absence</raw:absentAttendanceCategory>
+                    <raw:timeTablePeriod>4th</raw:timeTablePeriod>
+                </raw:source>
+            </event>

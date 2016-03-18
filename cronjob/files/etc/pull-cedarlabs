@@ -1,0 +1,2 @@
+# system-wide crontab
+0 4 * * * root NODE_CONFIG_DIR=/config /usr/bin/node /src/cli.js pull-cedarlabs >> /var/log/cron.log 2>&1

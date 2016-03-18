@@ -1,0 +1,1518 @@
+[
+    {
+        "id": "566947f64c74c70b002bfb6d",
+        "organization": {
+            "refId": "55913fc817aac10c2bbfe1e7",
+            "organizationName": "Super Athletes",
+            "externalServiceId": "5",
+            "authorizedEntityId": "2",
+            "districtStudentId": "sample1",
+            "zoneId": "highline",
+            "contextId": "CBO"
+        },
+        "env": {
+            "domain": "psesd",
+            "solution": "dev"
+        },
+        "lastResponse": {
+            "statusCode": "500",
+            "statusMessage": "Internal Server Error",
+            "env": {
+                "domain": "psesd",
+                "solution": "dev"
+            },
+            "error": "\"An unexpected error occurred retrieving the student data.The remote server returned an error: (503) Server Unavailable.System.Net.WebException at System.Net.HttpWebRequest.GetResponse()\\r\\n at PRS.SIFUtils.SIFRequestUtils.GetRequest_SIF_HMACSHA256(String url, String sessionToken, String sharedSecret, Dictionary`2 additionalHeaders)\\r\\n at P2CBO.EARS.Api.Controllers.SIFObjectController.<getStudentData>d__20.MoveNext()\"",
+            "attempts": "1"
+        },
+        "xSre": {
+            "refId": "92824ac1-774e-4e9c-805f-2834f23d48d9",
+            "xmlns:raw": "raw",
+            "xmlns:psesd": "psesd",
+            "xmlns:sif": "http://www.sifassociation.org/datamodel/na/3.3",
+            "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+            "xmlns:xsd": "http://www.w3.org/2001/XMLSchema",
+            "demographics": {
+                "hispanicLatinoEthnicity": "false"
+            },
+            "enrollment": {},
+            "reportDate": "2015-12-08",
+            "transcriptTerm": {
+                "academicSummary": {}
+            },
+            "programs": {
+                "lep": {
+                    "lepStatus": "Unknown",
+                    "perkinsLepStatus": "Unknown",
+                    "title3LepParticipationStatus": "Unknown"
+                },
+                "homeless": "Unknown",
+                "title1": "Unknown",
+                "giftedTalented": {
+                    "enrollmentStatus": "Unknown"
+                },
+                "neglectedDelinquent": "Unknown",
+                "section504": "Unknown",
+                "immigrant": "Unknown",
+                "vocationalConcentrator": "Unknown"
+            }
+        }
+    },
+    {
+        "id": "5694cd26eec6ae1a45fb5a8e",
+        "organization": {
+            "refId": "55913fc817aac10c2bbfe1e8",
+            "organizationName": "Helping Hand CBO",
+            "externalServiceId": "5",
+            "authorizedEntityId": "2",
+            "districtStudentId": "17602923",
+            "zoneId": "seattle",
+            "contextId": "CBO"
+        },
+        "env": {
+            "domain": "psesd",
+            "solution": "dev"
+        },
+        "lastResponse": {
+            "statusCode": "500",
+            "statusMessage": "Internal Server Error",
+            "env": {
+                "domain": "psesd",
+                "solution": "dev"
+            },
+            "error": "\"An unexpected error occurred retrieving the student data.The remote server returned an error: (503) Server Unavailable.System.Net.WebException at System.Net.HttpWebRequest.GetResponse()\\r\\n at PRS.SIFUtils.SIFRequestUtils.GetRequest_SIF_HMACSHA256(String url, String sessionToken, String sharedSecret, Dictionary`2 additionalHeaders)\\r\\n at P2CBO.EARS.Api.Controllers.SIFObjectController.<getStudentData>d__20.MoveNext()\"",
+            "attempts": "1"
+        }
+    },
+    {
+        "id": "55f143806376010d00da8779",
+        "organization": {
+            "refId": "55913fc817aac10c2bbfe1e7",
+            "organizationName": "Super Athletes",
+            "externalServiceId": "5",
+            "authorizedEntityId": "2",
+            "districtStudentId": "sample1",
+            "zoneId": "highline",
+            "contextId": "CBO"
+        },
+        "env": {
+            "domain": "psesd",
+            "solution": "dev"
+        },
+        "lastResponse": {
+            "statusCode": "200",
+            "statusMessage": "OK",
+            "env": {
+                "domain": "psesd",
+                "solution": "dev"
+            }
+        },
+        "xSre": {
+            "refId": "92824ac1-774e-4e9c-805f-2834f23d48d9",
+            "xmlns:raw": "raw",
+            "xmlns:psesd": "psesd",
+            "xmlns:sif": "http://www.sifassociation.org/datamodel/na/3.3",
+            "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+            "xmlns:xsd": "http://www.w3.org/2001/XMLSchema",
+            "demographics": {
+                "hispanicLatinoEthnicity": "false"
+            },
+            "enrollment": {},
+            "reportDate": "2015-12-08",
+            "transcriptTerm": {
+                "academicSummary": {}
+            },
+            "programs": {
+                "lep": {
+                    "lepStatus": "Unknown",
+                    "perkinsLepStatus": "Unknown",
+                    "title3LepParticipationStatus": "Unknown"
+                },
+                "homeless": "Unknown",
+                "title1": "Unknown",
+                "giftedTalented": {
+                    "enrollmentStatus": "Unknown"
+                },
+                "neglectedDelinquent": "Unknown",
+                "section504": "Unknown",
+                "immigrant": "Unknown",
+                "vocationalConcentrator": "Unknown"
+            }
+        }
+    },
+    {
+        "id": "5694cd26eec6ae1a45fb5adc",
+        "organization": {
+            "refId": "55913fc817aac10c2bbfe1e8",
+            "organizationName": "Helping Hand CBO",
+            "externalServiceId": "5",
+            "authorizedEntityId": "2",
+            "districtStudentId": "33994970",
+            "zoneId": "seattle",
+            "contextId": "CBO"
+        },
+        "env": {
+            "domain": "psesd",
+            "solution": "dev"
+        },
+        "lastResponse": {
+            "statusCode": "500",
+            "statusMessage": "Internal Server Error",
+            "env": {
+                "domain": "psesd",
+                "solution": "dev"
+            },
+            "error": "\"An unexpected error occurred retrieving the student data.The remote server returned an error: (503) Server Unavailable.System.Net.WebException at System.Net.HttpWebRequest.GetResponse()\\r\\n at PRS.SIFUtils.SIFRequestUtils.GetRequest_SIF_HMACSHA256(String url, String sessionToken, String sharedSecret, Dictionary`2 additionalHeaders)\\r\\n at P2CBO.EARS.Api.Controllers.SIFObjectController.<getStudentData>d__20.MoveNext()\"",
+            "attempts": "1"
+        }
+    },
+    {
+        "id": "55c0912ff9f16f5b008190c1",
+        "organization": {
+            "refId": "55913fc817aac10c2bbfe1ea",
+            "organizationName": "Super Athletes - GOOD",
+            "externalServiceId": "3",
+            "authorizedEntityId": "2",
+            "districtStudentId": "sample1",
+            "zoneId": "highline",
+            "contextId": "CBO"
+        },
+        "env": {
+            "domain": "psesd",
+            "solution": "dev"
+        },
+        "lastResponse": {
+            "statusCode": "200",
+            "statusMessage": "OK",
+            "env": {
+                "domain": "psesd",
+                "solution": "dev"
+            }
+        },
+        "xSre": {
+            "refId": "92824ac1-774e-4e9c-805f-2834f23d48d9",
+            "xmlns:raw": "raw",
+            "xmlns:psesd": "psesd",
+            "xmlns:sif": "http://www.sifassociation.org/datamodel/na/3.3",
+            "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+            "xmlns:xsd": "http://www.w3.org/2001/XMLSchema",
+            "demographics": {
+                "hispanicLatinoEthnicity": "false"
+            },
+            "enrollment": {},
+            "reportDate": "2015-12-08",
+            "transcriptTerm": {
+                "academicSummary": {}
+            },
+            "programs": {
+                "lep": {
+                    "lepStatus": "Unknown",
+                    "perkinsLepStatus": "Unknown",
+                    "title3LepParticipationStatus": "Unknown"
+                },
+                "homeless": "Unknown",
+                "title1": "Unknown",
+                "giftedTalented": {
+                    "enrollmentStatus": "Unknown"
+                },
+                "neglectedDelinquent": "Unknown",
+                "section504": "Unknown",
+                "immigrant": "Unknown",
+                "vocationalConcentrator": "Unknown"
+            }
+        }
+    },
+    {
+        "id": "5694cd26eec6ae1a45fb5af4",
+        "organization": {
+            "refId": "55913fc817aac10c2bbfe1e8",
+            "organizationName": "Helping Hand CBO",
+            "externalServiceId": "5",
+            "authorizedEntityId": "2",
+            "districtStudentId": "21933112",
+            "zoneId": "seattle",
+            "contextId": "CBO"
+        },
+        "env": {
+            "domain": "psesd",
+            "solution": "dev"
+        },
+        "lastResponse": {
+            "statusCode": "500",
+            "statusMessage": "Internal Server Error",
+            "env": {
+                "domain": "psesd",
+                "solution": "dev"
+            },
+            "error": "\"An unexpected error occurred retrieving the student data.The remote server returned an error: (503) Server Unavailable.System.Net.WebException at System.Net.HttpWebRequest.GetResponse()\\r\\n at PRS.SIFUtils.SIFRequestUtils.GetRequest_SIF_HMACSHA256(String url, String sessionToken, String sharedSecret, Dictionary`2 additionalHeaders)\\r\\n at P2CBO.EARS.Api.Controllers.SIFObjectController.<getStudentData>d__20.MoveNext()\"",
+            "attempts": "1"
+        }
+    },
+    {
+        "id": "5694cd26eec6ae1a45fb5aed",
+        "organization": {
+            "refId": "55913fc817aac10c2bbfe1e8",
+            "organizationName": "Helping Hand CBO",
+            "externalServiceId": "5",
+            "authorizedEntityId": "2",
+            "districtStudentId": "67529968",
+            "zoneId": "seattle",
+            "contextId": "CBO"
+        },
+        "env": {
+            "domain": "psesd",
+            "solution": "dev"
+        },
+        "lastResponse": {
+            "statusCode": "500",
+            "statusMessage": "Internal Server Error",
+            "env": {
+                "domain": "psesd",
+                "solution": "dev"
+            },
+            "error": "\"An unexpected error occurred retrieving the student data.The remote server returned an error: (503) Server Unavailable.System.Net.WebException at System.Net.HttpWebRequest.GetResponse()\\r\\n at PRS.SIFUtils.SIFRequestUtils.GetRequest_SIF_HMACSHA256(String url, String sessionToken, String sharedSecret, Dictionary`2 additionalHeaders)\\r\\n at P2CBO.EARS.Api.Controllers.SIFObjectController.<getStudentData>d__20.MoveNext()\"",
+            "attempts": "1"
+        }
+    },
+    {
+        "id": "5694cd26eec6ae1a45fb5a75",
+        "organization": {
+            "refId": "55913fc817aac10c2bbfe1e8",
+            "organizationName": "Helping Hand CBO",
+            "externalServiceId": "5",
+            "authorizedEntityId": "2",
+            "districtStudentId": "11737233",
+            "zoneId": "seattle",
+            "contextId": "CBO"
+        },
+        "env": {
+            "domain": "psesd",
+            "solution": "dev"
+        },
+        "lastResponse": {
+            "statusCode": "500",
+            "statusMessage": "Internal Server Error",
+            "env": {
+                "domain": "psesd",
+                "solution": "dev"
+            },
+            "error": "\"An unexpected error occurred retrieving the student data.The remote server returned an error: (503) Server Unavailable.System.Net.WebException at System.Net.HttpWebRequest.GetResponse()\\r\\n at PRS.SIFUtils.SIFRequestUtils.GetRequest_SIF_HMACSHA256(String url, String sessionToken, String sharedSecret, Dictionary`2 additionalHeaders)\\r\\n at P2CBO.EARS.Api.Controllers.SIFObjectController.<getStudentData>d__20.MoveNext()\"",
+            "attempts": "1"
+        }
+    },
+    {
+        "id": "5694ed14a8ae6c8d00a3b5fd",
+        "organization": {
+            "refId": "55913fc817aac10c2bbfe1e8",
+            "organizationName": "Helping Hand CBO",
+            "externalServiceId": "5",
+            "authorizedEntityId": "2",
+            "districtStudentId": "123456789",
+            "zoneId": "seattle",
+            "contextId": "CBO"
+        },
+        "env": {
+            "domain": "psesd",
+            "solution": "dev"
+        },
+        "lastResponse": {
+            "statusCode": "500",
+            "statusMessage": "Internal Server Error",
+            "env": {
+                "domain": "psesd",
+                "solution": "dev"
+            },
+            "error": "\"An unexpected error occurred retrieving the student data.The remote server returned an error: (404) Not Found.System.Net.WebException at System.Net.HttpWebRequest.GetResponse()\\r\\n at PRS.SIFUtils.SIFRequestUtils.GetRequest_SIF_HMACSHA256(String url, String sessionToken, String sharedSecret, Dictionary`2 additionalHeaders)\\r\\n at P2CBO.EARS.Api.Controllers.SIFObjectController.<getStudentData>d__20.MoveNext()\"",
+            "attempts": "1"
+        }
+    },
+    {
+        "id": "55c0f385f912c488008de29b",
+        "organization": {
+            "refId": "55913fc817aac10c2bbfe1e8",
+            "organizationName": "Helping Hand CBO",
+            "externalServiceId": "5",
+            "authorizedEntityId": "2",
+            "districtStudentId": "sample11",
+            "zoneId": "highline",
+            "contextId": "CBO"
+        },
+        "studentActivity": {
+            "refId": "55b78a6d09356aa70014f048",
+            "title": "Test Program"
+        },
+        "programs": {
+            "activities": {
+                "activity": {
+                    "studentActivityRefId": "55b78a6d09356aa70014f048",
+                    "startDate": "08/03/2015",
+                    "endDate": "08/21/2015",
+                    "active": "true",
+                    "tags": {
+                        "tag": {
+                            "0": "2015",
+                            "1": "2016",
+                            "2": "GroupA"
+                        }
+                    }
+                }
+            }
+        },
+        "env": {
+            "domain": "psesd",
+            "solution": "dev"
+        },
+        "lastResponse": {
+            "statusCode": "200",
+            "statusMessage": "OK",
+            "env": {
+                "domain": "psesd",
+                "solution": "dev"
+            }
+        },
+        "xSre": {
+            "refId": "805b5a41-f5bc-41bc-9689-a47e95153e3a",
+            "xmlns:raw": "raw",
+            "xmlns:psesd": "psesd",
+            "xmlns:sif": "http://www.sifassociation.org/datamodel/na/3.3",
+            "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+            "xmlns:xsd": "http://www.w3.org/2001/XMLSchema",
+            "demographics": {
+                "hispanicLatinoEthnicity": "false"
+            },
+            "enrollment": {},
+            "reportDate": "2015-12-08",
+            "transcriptTerm": {
+                "academicSummary": {}
+            },
+            "programs": {
+                "lep": {
+                    "lepStatus": "Unknown",
+                    "perkinsLepStatus": "Unknown",
+                    "title3LepParticipationStatus": "Unknown"
+                },
+                "homeless": "Unknown",
+                "title1": "Unknown",
+                "giftedTalented": {
+                    "enrollmentStatus": "Unknown"
+                },
+                "neglectedDelinquent": "Unknown",
+                "section504": "Unknown",
+                "immigrant": "Unknown",
+                "vocationalConcentrator": "Unknown"
+            }
+        }
+    },
+    {
+        "id": "566957c947693d0d00ad1f08",
+        "organization": {
+            "refId": "55913fc817aac10c2bbfe1e8",
+            "organizationName": "Helping Hand CBO",
+            "externalServiceId": "5",
+            "authorizedEntityId": "2",
+            "districtStudentId": "sample1",
+            "zoneId": "highline",
+            "contextId": "CBO"
+        },
+        "env": {
+            "domain": "psesd",
+            "solution": "dev"
+        },
+        "lastResponse": {
+            "statusCode": "200",
+            "statusMessage": "OK",
+            "env": {
+                "domain": "psesd",
+                "solution": "dev"
+            }
+        },
+        "xSre": {
+            "refId": "92824ac1-774e-4e9c-805f-2834f23d48d9",
+            "xmlns:raw": "raw",
+            "xmlns:psesd": "psesd",
+            "xmlns:sif": "http://www.sifassociation.org/datamodel/na/3.3",
+            "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+            "xmlns:xsd": "http://www.w3.org/2001/XMLSchema",
+            "demographics": {
+                "hispanicLatinoEthnicity": "false"
+            },
+            "enrollment": {},
+            "reportDate": "2015-12-08",
+            "transcriptTerm": {
+                "academicSummary": {}
+            },
+            "programs": {
+                "lep": {
+                    "lepStatus": "Unknown",
+                    "perkinsLepStatus": "Unknown",
+                    "title3LepParticipationStatus": "Unknown"
+                },
+                "homeless": "Unknown",
+                "title1": "Unknown",
+                "giftedTalented": {
+                    "enrollmentStatus": "Unknown"
+                },
+                "neglectedDelinquent": "Unknown",
+                "section504": "Unknown",
+                "immigrant": "Unknown",
+                "vocationalConcentrator": "Unknown"
+            }
+        }
+    },
+    {
+        "id": "5694cd26eec6ae1a45fb5ac7",
+        "organization": {
+            "refId": "55913fc817aac10c2bbfe1e8",
+            "organizationName": "Helping Hand CBO",
+            "externalServiceId": "5",
+            "authorizedEntityId": "2",
+            "districtStudentId": "18914895",
+            "zoneId": "seattle",
+            "contextId": "CBO"
+        },
+        "env": {
+            "domain": "psesd",
+            "solution": "dev"
+        },
+        "lastResponse": {
+            "statusCode": "500",
+            "statusMessage": "Internal Server Error",
+            "env": {
+                "domain": "psesd",
+                "solution": "dev"
+            },
+            "error": "\"An unexpected error occurred retrieving the student data.The remote server returned an error: (503) Server Unavailable.System.Net.WebException at System.Net.HttpWebRequest.GetResponse()\\r\\n at PRS.SIFUtils.SIFRequestUtils.GetRequest_SIF_HMACSHA256(String url, String sessionToken, String sharedSecret, Dictionary`2 additionalHeaders)\\r\\n at P2CBO.EARS.Api.Controllers.SIFObjectController.<getStudentData>d__20.MoveNext()\"",
+            "attempts": "1"
+        }
+    },
+    {
+        "id": "566955f547693d0d00ad1f04",
+        "organization": {
+            "refId": "55913fc817aac10c2bbfe1e7",
+            "organizationName": "Super Athletes",
+            "externalServiceId": "5",
+            "authorizedEntityId": "2",
+            "districtStudentId": "sample1",
+            "zoneId": "highline",
+            "contextId": "CBO"
+        },
+        "env": {
+            "domain": "psesd",
+            "solution": "dev"
+        },
+        "lastResponse": {
+            "statusCode": "200",
+            "statusMessage": "OK",
+            "env": {
+                "domain": "psesd",
+                "solution": "dev"
+            }
+        },
+        "xSre": {
+            "refId": "92824ac1-774e-4e9c-805f-2834f23d48d9",
+            "xmlns:raw": "raw",
+            "xmlns:psesd": "psesd",
+            "xmlns:sif": "http://www.sifassociation.org/datamodel/na/3.3",
+            "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+            "xmlns:xsd": "http://www.w3.org/2001/XMLSchema",
+            "demographics": {
+                "hispanicLatinoEthnicity": "false"
+            },
+            "enrollment": {},
+            "reportDate": "2015-12-08",
+            "transcriptTerm": {
+                "academicSummary": {}
+            },
+            "programs": {
+                "lep": {
+                    "lepStatus": "Unknown",
+                    "perkinsLepStatus": "Unknown",
+                    "title3LepParticipationStatus": "Unknown"
+                },
+                "homeless": "Unknown",
+                "title1": "Unknown",
+                "giftedTalented": {
+                    "enrollmentStatus": "Unknown"
+                },
+                "neglectedDelinquent": "Unknown",
+                "section504": "Unknown",
+                "immigrant": "Unknown",
+                "vocationalConcentrator": "Unknown"
+            }
+        }
+    },
+    {
+        "id": "5694cd26eec6ae1a45fb5ab9",
+        "organization": {
+            "refId": "55913fc817aac10c2bbfe1e8",
+            "organizationName": "Helping Hand CBO",
+            "externalServiceId": "5",
+            "authorizedEntityId": "2",
+            "districtStudentId": "40082147",
+            "zoneId": "seattle",
+            "contextId": "CBO"
+        },
+        "env": {
+            "domain": "psesd",
+            "solution": "dev"
+        },
+        "lastResponse": {
+            "statusCode": "500",
+            "statusMessage": "Internal Server Error",
+            "env": {
+                "domain": "psesd",
+                "solution": "dev"
+            },
+            "error": "\"An unexpected error occurred retrieving the student data.The remote server returned an error: (503) Server Unavailable.System.Net.WebException at System.Net.HttpWebRequest.GetResponse()\\r\\n at PRS.SIFUtils.SIFRequestUtils.GetRequest_SIF_HMACSHA256(String url, String sessionToken, String sharedSecret, Dictionary`2 additionalHeaders)\\r\\n at P2CBO.EARS.Api.Controllers.SIFObjectController.<getStudentData>d__20.MoveNext()\"",
+            "attempts": "1"
+        }
+    },
+    {
+        "id": "5694cd26eec6ae1a45fb5ae5",
+        "organization": {
+            "refId": "55913fc817aac10c2bbfe1e8",
+            "organizationName": "Helping Hand CBO",
+            "externalServiceId": "5",
+            "authorizedEntityId": "2",
+            "districtStudentId": "40445417",
+            "zoneId": "seattle",
+            "contextId": "CBO"
+        },
+        "env": {
+            "domain": "psesd",
+            "solution": "dev"
+        },
+        "lastResponse": {
+            "statusCode": "500",
+            "statusMessage": "Internal Server Error",
+            "env": {
+                "domain": "psesd",
+                "solution": "dev"
+            },
+            "error": "\"An unexpected error occurred retrieving the student data.The remote server returned an error: (503) Server Unavailable.System.Net.WebException at System.Net.HttpWebRequest.GetResponse()\\r\\n at PRS.SIFUtils.SIFRequestUtils.GetRequest_SIF_HMACSHA256(String url, String sessionToken, String sharedSecret, Dictionary`2 additionalHeaders)\\r\\n at P2CBO.EARS.Api.Controllers.SIFObjectController.<getStudentData>d__20.MoveNext()\"",
+            "attempts": "1"
+        }
+    },
+    {
+        "id": "5694cd26eec6ae1a45fb5a6c",
+        "organization": {
+            "refId": "55913fc817aac10c2bbfe1e8",
+            "organizationName": "Helping Hand CBO",
+            "externalServiceId": "5",
+            "authorizedEntityId": "2",
+            "districtStudentId": "11760011",
+            "zoneId": "seattle",
+            "contextId": "CBO"
+        },
+        "env": {
+            "domain": "psesd",
+            "solution": "dev"
+        },
+        "lastResponse": {
+            "statusCode": "500",
+            "statusMessage": "Internal Server Error",
+            "env": {
+                "domain": "psesd",
+                "solution": "dev"
+            },
+            "error": "\"An unexpected error occurred retrieving the student data.The remote server returned an error: (503) Server Unavailable.System.Net.WebException at System.Net.HttpWebRequest.GetResponse()\\r\\n at PRS.SIFUtils.SIFRequestUtils.GetRequest_SIF_HMACSHA256(String url, String sessionToken, String sharedSecret, Dictionary`2 additionalHeaders)\\r\\n at P2CBO.EARS.Api.Controllers.SIFObjectController.<getStudentData>d__20.MoveNext()\"",
+            "attempts": "1"
+        }
+    },
+    {
+        "id": "55d263b18c55b9ea0068abfd",
+        "organization": {
+            "refId": "55913fc817aac10c2bbfe1e8",
+            "organizationName": "Helping Hand CBO",
+            "externalServiceId": "5",
+            "authorizedEntityId": "2",
+            "districtStudentId": "sample2",
+            "zoneId": "highline",
+            "contextId": "CBO"
+        },
+        "env": {
+            "domain": "psesd",
+            "solution": "dev"
+        },
+        "lastResponse": {
+            "statusCode": "200",
+            "statusMessage": "OK",
+            "env": {
+                "domain": "psesd",
+                "solution": "dev"
+            }
+        },
+        "xSre": {
+            "refId": "7edbe817-7950-4cca-98b2-5628f0b780e6",
+            "xmlns:raw": "raw",
+            "xmlns:psesd": "psesd",
+            "xmlns:sif": "http://www.sifassociation.org/datamodel/na/3.3",
+            "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+            "xmlns:xsd": "http://www.w3.org/2001/XMLSchema",
+            "demographics": {
+                "hispanicLatinoEthnicity": "false"
+            },
+            "enrollment": {},
+            "reportDate": "2015-12-08",
+            "transcriptTerm": {
+                "academicSummary": {}
+            },
+            "programs": {
+                "lep": {
+                    "lepStatus": "Unknown",
+                    "perkinsLepStatus": "Unknown",
+                    "title3LepParticipationStatus": "Unknown"
+                },
+                "homeless": "Unknown",
+                "title1": "Unknown",
+                "giftedTalented": {
+                    "enrollmentStatus": "Unknown"
+                },
+                "neglectedDelinquent": "Unknown",
+                "section504": "Unknown",
+                "immigrant": "Unknown",
+                "vocationalConcentrator": "Unknown"
+            }
+        }
+    },
+    {
+        "id": "565dd464bbd4f00d001e1696",
+        "organization": {
+            "refId": "55913fc817aac10c2bbfe1e8",
+            "organizationName": "Helping Hand CBO",
+            "externalServiceId": "5",
+            "authorizedEntityId": "2",
+            "districtStudentId": "123",
+            "zoneId": "seattle",
+            "contextId": "CBO"
+        },
+        "env": {
+            "domain": "psesd",
+            "solution": "dev"
+        },
+        "lastResponse": {
+            "statusCode": "200",
+            "statusMessage": "OK",
+            "env": {
+                "domain": "psesd",
+                "solution": "dev"
+            }
+        },
+        "xSre": {
+            "refId": "f4066613-581a-4440-ad7d-aecf78bf8f24",
+            "xmlns:raw": "raw",
+            "xmlns:psesd": "psesd",
+            "xmlns:sif": "http://www.sifassociation.org/datamodel/na/3.3",
+            "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+            "xmlns:xsd": "http://www.w3.org/2001/XMLSchema",
+            "name": {
+                "familyName": "familyName",
+                "givenName": "givenName"
+            },
+            "localId": "7e9f7411d78b3bc39628f64efda0bcb336b790fdbf55a6fcdb4965405c90bd4f",
+            "phoneNumber": {
+                "number": "number",
+                "primaryIndicator": "true"
+            },
+            "demographics": {
+                "races": {
+                    "race": {
+                        "race": "AmericanIndianOrAlaskaNative"
+                    }
+                },
+                "hispanicLatinoEthnicity": "false",
+                "sex": "Male",
+                "raw:source": {
+                    "raw:races": {
+                        "raw:race": "American Indian"
+                    },
+                    "raw:hispanicLatinoEthnicity": "American Indian",
+                    "raw:sex": "Male"
+                }
+            },
+            "enrollment": {
+                "leaRefId": "2231b8d9-d14d-4f8b-b289-a048319f6ddb",
+                "schoolRefId": "b96bc153-7099-4571-9f68-e65091f642c0",
+                "school": {
+                    "refId": "b96bc153-7099-4571-9f68-e65091f642c0",
+                    "leaRefId": "2231b8d9-d14d-4f8b-b289-a048319f6ddb",
+                    "localId": "11",
+                    "schoolName": "Winterfell"
+                },
+                "schoolYear": "2015",
+                "entryDate": "2015-01-01",
+                "exitDate": "2021-01-01",
+                "gradeLevel": "05",
+                "projectedGraduationYear": "2021",
+                "raw:source": {
+                    "raw:schoolYear": "2013-2015",
+                    "raw:entryDate": "01/01/15",
+                    "raw:exitDate": "2021",
+                    "raw:gradeLevel": "5",
+                    "raw:projectedGraduationYear": "2021"
+                }
+            },
+            "otherEnrollments": {
+                "enrollment": {
+                    "leaRefId": "f7ebb53f-83db-4433-ad5e-13edfb44d8f7",
+                    "schoolRefId": "b5ce9756-f106-422b-bd88-1a044a83b31c",
+                    "school": {
+                        "refId": "b5ce9756-f106-422b-bd88-1a044a83b31c",
+                        "leaRefId": "f7ebb53f-83db-4433-ad5e-13edfb44d8f7",
+                        "localId": "9876",
+                        "schoolName": "Winterfell Elementary"
+                    },
+                    "schoolYear": "2015",
+                    "entryDate": "2015-01-01",
+                    "gradeLevel": "05",
+                    "raw:source": {
+                        "raw:schoolYear": "2015",
+                        "raw:entryDate": "01/01/15",
+                        "raw:gradeLevel": "5",
+                        "raw:enrollmentStatusDescription": "Enrolled"
+                    }
+                }
+            },
+            "languages": {
+                "language": {
+                    "0": {
+                        "type": "Dominant"
+                    },
+                    "1": {
+                        "type": "Home"
+                    }
+                }
+            },
+            "reportDate": "2016-01-27",
+            "assessments": {
+                "assessment": {
+                    "0": {
+                        "studentGradeLevel": "05",
+                        "scoreSets": {
+                            "scoreSet": {
+                                "subTestName": "Valyrian",
+                                "scores": {
+                                    "score": {
+                                        "0": {
+                                            "metric": "00506",
+                                            "scoreValue": "80"
+                                        },
+                                        "1": {
+                                            "metric": "00502",
+                                            "scoreValue": "5"
+                                        },
+                                        "2": {
+                                            "metric": "03474",
+                                            "scoreValue": "MetTypicalGrowth_LastFall2ThisFall True"
+                                        },
+                                        "3": {
+                                            "metric": "03474",
+                                            "scoreValue": "MetTypicalGrowth_LastSpring2ThisSpring False"
+                                        }
+                                    }
+                                },
+                                "raw:source": {
+                                    "raw:subTestSubjectArea": "Reading"
+                                },
+                                "subTestSubjectArea": "00560"
+                            }
+                        }
+                    },
+                    "1": {
+                        "studentGradeLevel": "05",
+                        "school": {
+                            "leaRefId": "f7ebb53f-83db-4433-ad5e-13edfb44d8f7",
+                            "schoolName": "Winterfell Elementary",
+                            "localId": "9876",
+                            "refId": "b5ce9756-f106-422b-bd88-1a044a83b31c"
+                        },
+                        "scoreSets": {
+                            "scoreSet": {
+                                "subTestName": "Valyrian",
+                                "scores": {
+                                    "score": {
+                                        "0": {
+                                            "metric": "03479",
+                                            "scoreValue": "79"
+                                        },
+                                        "1": {
+                                            "metric": "00503",
+                                            "scoreValue": "3"
+                                        },
+                                        "2": {
+                                            "metric": "00500",
+                                            "scoreValue": "No"
+                                        }
+                                    }
+                                },
+                                "raw:source": {
+                                    "raw:subTestSubjectArea": "Reading",
+                                    "raw:attemptCode": "AU"
+                                },
+                                "attemptCode": "AU",
+                                "subTestSubjectArea": "00560"
+                            }
+                        }
+                    }
+                }
+            },
+            "attendance": {
+                "summaries": {
+                    "summary": {
+                        "0": {
+                            "psesd:riskLevel": "High",
+                            "psesd:trend": "Worsening",
+                            "raw:source": {
+                                "raw:studentAttendanceRate": "80"
+                            },
+                            "studentAttendanceRate": "80.0",
+                            "daysAbsent": "20"
+                        },
+                        "1": {
+                            "raw:source": {
+                                "raw:startDate": "01/01/15"
+                            },
+                            "startDate": "2015-01-01"
+                        }
+                    }
+                },
+                "events": {
+                    "event": {
+                        "0": {
+                            "attendanceValue": "0.0",
+                            "calendarEventDate": "2015-02-03",
+                            "raw:source": {
+                                "raw:dayAbsent": "0",
+                                "raw:attendanceValue": "0.0",
+                                "raw:calendarEventDate": "02/03/15",
+                                "raw:dayUnexcused": "1",
+                                "raw:attendanceStatus": "UnexcusedAbsence",
+                                "raw:attendanceEventType": "DailyAttendance"
+                            },
+                            "attendanceEventType": "DailyAttendance",
+                            "attendanceStatus": "UnexcusedAbsence"
+                        },
+                        "1": {
+                            "psesd:absentReasonDescription": "Wildling attack",
+                            "timeTablePeriod": "1",
+                            "calendarEventDate": "2015-05-01",
+                            "raw:source": {
+                                "raw:absentAttendanceCategory": "Wildling attack",
+                                "raw:calendarEventDate": "05/01/15",
+                                "raw:timeTablePeriod": "1",
+                                "raw:attendanceStatus": "Excused",
+                                "raw:attendanceEventType": "ClassSectionAttendance"
+                            },
+                            "attendanceEventType": "ClassSectionAttendance",
+                            "attendanceStatus": "ExcusedAbsence"
+                        }
+                    }
+                }
+            },
+            "disciplineIncidents": {
+                "disciplineIncident": {
+                    "localId": "765",
+                    "description": "Loss of privileges",
+                    "incidentDate": "2015-05-01",
+                    "actions": {
+                        "action": {
+                            "code": "03091",
+                            "reportingSchool": {
+                                "refId": "b5ce9756-f106-422b-bd88-1a044a83b31c",
+                                "leaRefId": "f7ebb53f-83db-4433-ad5e-13edfb44d8f7",
+                                "localId": "9876",
+                                "schoolName": "Winterfell Elementary"
+                            },
+                            "raw:source": {
+                                "raw:code": "03091"
+                            }
+                        }
+                    },
+                    "raw:source": {
+                        "raw:incidentDate": "05/01/15"
+                    }
+                }
+            },
+            "transcriptTerm": {
+                "school": {
+                    "refId": "b5ce9756-f106-422b-bd88-1a044a83b31c",
+                    "leaRefId": "f7ebb53f-83db-4433-ad5e-13edfb44d8f7",
+                    "localId": "9876",
+                    "schoolName": "Winterfell Elementary"
+                },
+                "schoolYear": "2015",
+                "courses": {
+                    "course": {
+                        "refId": "31d0a50b-946a-4017-9987-1d367b9d7563",
+                        "schoolRefId": "b5ce9756-f106-422b-bd88-1a044a83b31c",
+                        "leaCourseId": "HCT1980",
+                        "courseTitle": "Rock Climbing",
+                        "subject": "Bouldering",
+                        "progressMark": "4",
+                        "timeTablePeriod": "3"
+                    }
+                },
+                "academicSummary": {
+                    "psesd:onTrackToGraduate": "Unknown",
+                    "totalCreditsEarned": "30.0"
+                },
+                "raw:source": {
+                    "raw:schoolYear": "2014-15"
+                }
+            },
+            "otherTranscriptTerms": {
+                "transcriptTerm": {
+                    "school": {
+                        "refId": "b5ce9756-f106-422b-bd88-1a044a83b31c",
+                        "leaRefId": "f7ebb53f-83db-4433-ad5e-13edfb44d8f7",
+                        "localId": "9876",
+                        "schoolName": "Winterfell Elementary"
+                    },
+                    "schoolYear": "2015",
+                    "session": {
+                        "sessionType": "Semester",
+                        "sessionCode": "1",
+                        "description": "Semester 1",
+                        "markingTerm": "true",
+                        "schedulingTerm": "false",
+                        "startDate": "2014-09-01"
+                    },
+                    "gradeLevel": "05",
+                    "courses": {
+                        "course": {
+                            "refId": "32bfdd1b-263b-4671-8883-46c0e89adf27",
+                            "schoolRefId": "b5ce9756-f106-422b-bd88-1a044a83b31c",
+                            "leaCourseId": "HCT1980",
+                            "courseTitle": "Rock Climbing",
+                            "subject": "Bouldering",
+                            "creditsAttempted": "8",
+                            "creditsEarned": "8",
+                            "finalMarkValue": "3",
+                            "timeTablePeriod": "3"
+                        }
+                    },
+                    "raw:source": {
+                        "raw:schoolYear": "2015",
+                        "raw:gradeLevel": "5"
+                    }
+                }
+            },
+            "programs": {
+                "specialEducation": {
+                    "schoolYear": "2016",
+                    "services": {
+                        "service": {
+                            "ideaIndicator": "Yes"
+                        }
+                    }
+                },
+                "lep": {
+                    "lepStatus": "No",
+                    "title3LepParticipationStatus": "No",
+                    "raw:source": {
+                        "raw:lepStatus": "N",
+                        "raw:title3LepParticipationStatus": "N"
+                    }
+                },
+                "giftedTalented": {
+                    "eligibilityStatus": "09999",
+                    "enrollmentStatus": "Yes",
+                    "raw:source": {
+                        "raw:eligibilityStatus": "Y",
+                        "raw:enrollmentStatus": "Y"
+                    }
+                },
+                "section504": "Yes"
+            }
+        }
+    },
+    {
+        "id": "55c3dc2df912c488008de29c",
+        "organization": {
+            "refId": "55c2df2317aac10c2bc04f4f",
+            "organizationName": "Galen Dev",
+            "externalServiceId": "5",
+            "personnelId": "1",
+            "authorizedEntityId": "2",
+            "districtStudentId": "sample1",
+            "zoneId": "Seattle",
+            "contextId": "CBO"
+        },
+        "env": {
+            "domain": "psesd",
+            "solution": "dev"
+        },
+        "lastResponse": {
+            "statusCode": "200",
+            "statusMessage": "OK",
+            "env": {
+                "domain": "psesd",
+                "solution": "dev"
+            }
+        },
+        "xSre": {
+            "refId": "80a14404-dfa2-4bdb-a9a2-27d87f27a306",
+            "xmlns:raw": "raw",
+            "xmlns:psesd": "psesd",
+            "xmlns:sif": "http://www.sifassociation.org/datamodel/na/3.3",
+            "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+            "xmlns:xsd": "http://www.w3.org/2001/XMLSchema",
+            "name": {
+                "familyName": "familyName",
+                "givenName": "givenName"
+            },
+            "localId": "92b39b7d072184c2d97f79cba6fa009a8142ca7182291297c0b83ba96a07d02c",
+            "phoneNumber": {
+                "number": "number",
+                "primaryIndicator": "true"
+            },
+            "demographics": {
+                "races": {
+                    "race": {
+                        "race": "AmericanIndianOrAlaskaNative"
+                    }
+                },
+                "hispanicLatinoEthnicity": "false",
+                "sex": "Male",
+                "raw:source": {
+                    "raw:races": {
+                        "raw:race": "American Indian"
+                    },
+                    "raw:hispanicLatinoEthnicity": "American Indian",
+                    "raw:sex": "Male"
+                }
+            },
+            "enrollment": {
+                "leaRefId": "7d7880bd-f890-4d1d-8c33-1278c4ab9f01",
+                "schoolRefId": "98710031-0917-4254-9ad6-ae6c224a16a9",
+                "school": {
+                    "refId": "98710031-0917-4254-9ad6-ae6c224a16a9",
+                    "leaRefId": "7d7880bd-f890-4d1d-8c33-1278c4ab9f01",
+                    "localId": "11",
+                    "schoolName": "Winterfell"
+                },
+                "schoolYear": "2015",
+                "entryDate": "2015-01-01",
+                "exitDate": "2021-01-01",
+                "gradeLevel": "05",
+                "projectedGraduationYear": "2021",
+                "raw:source": {
+                    "raw:schoolYear": "2013-2015",
+                    "raw:entryDate": "01/01/15",
+                    "raw:exitDate": "2021",
+                    "raw:gradeLevel": "5",
+                    "raw:projectedGraduationYear": "2021"
+                }
+            },
+            "otherEnrollments": {
+                "enrollment": {
+                    "leaRefId": "a14e94b5-d709-4f89-a2df-14cf1006fca2",
+                    "schoolRefId": "53f7aae3-0cbb-4c72-b4a1-4d8b64c51f9a",
+                    "school": {
+                        "refId": "53f7aae3-0cbb-4c72-b4a1-4d8b64c51f9a",
+                        "leaRefId": "a14e94b5-d709-4f89-a2df-14cf1006fca2",
+                        "localId": "9876",
+                        "schoolName": "Winterfell Elementary"
+                    },
+                    "schoolYear": "2015",
+                    "entryDate": "2015-01-01",
+                    "gradeLevel": "05",
+                    "raw:source": {
+                        "raw:schoolYear": "2015",
+                        "raw:entryDate": "01/01/15",
+                        "raw:gradeLevel": "5",
+                        "raw:enrollmentStatusDescription": "Enrolled"
+                    }
+                }
+            },
+            "languages": {
+                "language": {
+                    "0": {
+                        "type": "Dominant"
+                    },
+                    "1": {
+                        "type": "Home"
+                    }
+                }
+            },
+            "reportDate": "2016-01-27",
+            "assessments": {
+                "assessment": {
+                    "0": {
+                        "studentGradeLevel": "05",
+                        "scoreSets": {
+                            "scoreSet": {
+                                "subTestName": "Valyrian",
+                                "scores": {
+                                    "score": {
+                                        "0": {
+                                            "metric": "00506",
+                                            "scoreValue": "80"
+                                        },
+                                        "1": {
+                                            "metric": "00502",
+                                            "scoreValue": "5"
+                                        },
+                                        "2": {
+                                            "metric": "03474",
+                                            "scoreValue": "MetTypicalGrowth_LastFall2ThisFall True"
+                                        },
+                                        "3": {
+                                            "metric": "03474",
+                                            "scoreValue": "MetTypicalGrowth_LastSpring2ThisSpring False"
+                                        }
+                                    }
+                                },
+                                "raw:source": {
+                                    "raw:subTestSubjectArea": "Reading"
+                                },
+                                "subTestSubjectArea": "00560"
+                            }
+                        }
+                    },
+                    "1": {
+                        "studentGradeLevel": "05",
+                        "school": {
+                            "leaRefId": "a14e94b5-d709-4f89-a2df-14cf1006fca2",
+                            "schoolName": "Winterfell Elementary",
+                            "localId": "9876",
+                            "refId": "53f7aae3-0cbb-4c72-b4a1-4d8b64c51f9a"
+                        },
+                        "scoreSets": {
+                            "scoreSet": {
+                                "subTestName": "Valyrian",
+                                "scores": {
+                                    "score": {
+                                        "0": {
+                                            "metric": "03479",
+                                            "scoreValue": "79"
+                                        },
+                                        "1": {
+                                            "metric": "00503",
+                                            "scoreValue": "3"
+                                        },
+                                        "2": {
+                                            "metric": "00500",
+                                            "scoreValue": "No"
+                                        }
+                                    }
+                                },
+                                "raw:source": {
+                                    "raw:subTestSubjectArea": "Reading",
+                                    "raw:attemptCode": "AU"
+                                },
+                                "attemptCode": "AU",
+                                "subTestSubjectArea": "00560"
+                            }
+                        }
+                    }
+                }
+            },
+            "attendance": {
+                "summaries": {
+                    "summary": {
+                        "0": {
+                            "psesd:riskLevel": "High",
+                            "psesd:trend": "Worsening",
+                            "raw:source": {
+                                "raw:studentAttendanceRate": "80"
+                            },
+                            "studentAttendanceRate": "80.0",
+                            "daysAbsent": "20"
+                        },
+                        "1": {
+                            "raw:source": {
+                                "raw:startDate": "01/01/15"
+                            },
+                            "startDate": "2015-01-01"
+                        }
+                    }
+                },
+                "events": {
+                    "event": {
+                        "0": {
+                            "attendanceValue": "0.0",
+                            "calendarEventDate": "2015-02-03",
+                            "raw:source": {
+                                "raw:dayAbsent": "0",
+                                "raw:attendanceValue": "0.0",
+                                "raw:calendarEventDate": "02/03/15",
+                                "raw:dayUnexcused": "1",
+                                "raw:attendanceStatus": "UnexcusedAbsence",
+                                "raw:attendanceEventType": "DailyAttendance"
+                            },
+                            "attendanceEventType": "DailyAttendance",
+                            "attendanceStatus": "UnexcusedAbsence"
+                        },
+                        "1": {
+                            "psesd:absentReasonDescription": "Wildling attack",
+                            "timeTablePeriod": "1",
+                            "calendarEventDate": "2015-05-01",
+                            "raw:source": {
+                                "raw:absentAttendanceCategory": "Wildling attack",
+                                "raw:calendarEventDate": "05/01/15",
+                                "raw:timeTablePeriod": "1",
+                                "raw:attendanceStatus": "Excused",
+                                "raw:attendanceEventType": "ClassSectionAttendance"
+                            },
+                            "attendanceEventType": "ClassSectionAttendance",
+                            "attendanceStatus": "ExcusedAbsence"
+                        }
+                    }
+                }
+            },
+            "disciplineIncidents": {
+                "disciplineIncident": {
+                    "localId": "765",
+                    "description": "Loss of privileges",
+                    "incidentDate": "2015-05-01",
+                    "actions": {
+                        "action": {
+                            "code": "03091",
+                            "reportingSchool": {
+                                "refId": "53f7aae3-0cbb-4c72-b4a1-4d8b64c51f9a",
+                                "leaRefId": "a14e94b5-d709-4f89-a2df-14cf1006fca2",
+                                "localId": "9876",
+                                "schoolName": "Winterfell Elementary"
+                            },
+                            "raw:source": {
+                                "raw:code": "03091"
+                            }
+                        }
+                    },
+                    "raw:source": {
+                        "raw:incidentDate": "05/01/15"
+                    }
+                }
+            },
+            "transcriptTerm": {
+                "school": {
+                    "refId": "53f7aae3-0cbb-4c72-b4a1-4d8b64c51f9a",
+                    "leaRefId": "a14e94b5-d709-4f89-a2df-14cf1006fca2",
+                    "localId": "9876",
+                    "schoolName": "Winterfell Elementary"
+                },
+                "schoolYear": "2015",
+                "courses": {
+                    "course": {
+                        "refId": "66d0eb0c-cba6-473a-a4ef-2c396adf0d04",
+                        "schoolRefId": "53f7aae3-0cbb-4c72-b4a1-4d8b64c51f9a",
+                        "leaCourseId": "HCT1980",
+                        "courseTitle": "Rock Climbing",
+                        "subject": "Bouldering",
+                        "progressMark": "4",
+                        "timeTablePeriod": "3"
+                    }
+                },
+                "academicSummary": {
+                    "psesd:onTrackToGraduate": "Unknown",
+                    "totalCreditsEarned": "30.0"
+                },
+                "raw:source": {
+                    "raw:schoolYear": "2014-15"
+                }
+            },
+            "otherTranscriptTerms": {
+                "transcriptTerm": {
+                    "school": {
+                        "refId": "53f7aae3-0cbb-4c72-b4a1-4d8b64c51f9a",
+                        "leaRefId": "a14e94b5-d709-4f89-a2df-14cf1006fca2",
+                        "localId": "9876",
+                        "schoolName": "Winterfell Elementary"
+                    },
+                    "schoolYear": "2015",
+                    "session": {
+                        "sessionType": "Semester",
+                        "sessionCode": "1",
+                        "description": "Semester 1",
+                        "markingTerm": "true",
+                        "schedulingTerm": "false",
+                        "startDate": "2014-09-01"
+                    },
+                    "gradeLevel": "05",
+                    "courses": {
+                        "course": {
+                            "refId": "b7c720d0-f052-4cc0-86a1-017d41e7fb63",
+                            "schoolRefId": "53f7aae3-0cbb-4c72-b4a1-4d8b64c51f9a",
+                            "leaCourseId": "HCT1980",
+                            "courseTitle": "Rock Climbing",
+                            "subject": "Bouldering",
+                            "creditsAttempted": "8",
+                            "creditsEarned": "8",
+                            "finalMarkValue": "3",
+                            "timeTablePeriod": "3"
+                        }
+                    },
+                    "raw:source": {
+                        "raw:schoolYear": "2015",
+                        "raw:gradeLevel": "5"
+                    }
+                }
+            },
+            "programs": {
+                "specialEducation": {
+                    "schoolYear": "2016",
+                    "services": {
+                        "service": {
+                            "ideaIndicator": "Yes"
+                        }
+                    }
+                },
+                "lep": {
+                    "lepStatus": "No",
+                    "title3LepParticipationStatus": "No",
+                    "raw:source": {
+                        "raw:lepStatus": "N",
+                        "raw:title3LepParticipationStatus": "N"
+                    }
+                },
+                "giftedTalented": {
+                    "eligibilityStatus": "09999",
+                    "enrollmentStatus": "Yes",
+                    "raw:source": {
+                        "raw:eligibilityStatus": "Y",
+                        "raw:enrollmentStatus": "Y"
+                    }
+                },
+                "section504": "Yes"
+            }
+        }
+    },
+    {
+        "id": "56694c944944300b00c3f08c",
+        "organization": {
+            "refId": "55913fc817aac10c2bbfe1e7",
+            "organizationName": "Super Athletes",
+            "externalServiceId": "5",
+            "authorizedEntityId": "2",
+            "districtStudentId": "sample1",
+            "zoneId": "highline",
+            "contextId": "CBO"
+        },
+        "env": {
+            "domain": "psesd",
+            "solution": "dev"
+        },
+        "lastResponse": {
+            "statusCode": "200",
+            "statusMessage": "OK",
+            "env": {
+                "domain": "psesd",
+                "solution": "dev"
+            }
+        },
+        "xSre": {
+            "refId": "92824ac1-774e-4e9c-805f-2834f23d48d9",
+            "xmlns:raw": "raw",
+            "xmlns:psesd": "psesd",
+            "xmlns:sif": "http://www.sifassociation.org/datamodel/na/3.3",
+            "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+            "xmlns:xsd": "http://www.w3.org/2001/XMLSchema",
+            "demographics": {
+                "hispanicLatinoEthnicity": "false"
+            },
+            "enrollment": {},
+            "reportDate": "2015-12-08",
+            "transcriptTerm": {
+                "academicSummary": {}
+            },
+            "programs": {
+                "lep": {
+                    "lepStatus": "Unknown",
+                    "perkinsLepStatus": "Unknown",
+                    "title3LepParticipationStatus": "Unknown"
+                },
+                "homeless": "Unknown",
+                "title1": "Unknown",
+                "giftedTalented": {
+                    "enrollmentStatus": "Unknown"
+                },
+                "neglectedDelinquent": "Unknown",
+                "section504": "Unknown",
+                "immigrant": "Unknown",
+                "vocationalConcentrator": "Unknown"
+            }
+        }
+    },
+    {
+        "id": "566a763881a2f40c00765d46",
+        "organization": {
+            "refId": "55913fc817aac10c2bbfe1e8",
+            "organizationName": "Helping Hand CBO",
+            "externalServiceId": "5",
+            "authorizedEntityId": "2",
+            "districtStudentId": "sample1",
+            "zoneId": "highline",
+            "contextId": "CBO"
+        },
+        "env": {
+            "domain": "psesd",
+            "solution": "dev"
+        },
+        "lastResponse": {
+            "statusCode": "200",
+            "statusMessage": "OK",
+            "env": {
+                "domain": "psesd",
+                "solution": "dev"
+            }
+        },
+        "xSre": {
+            "refId": "92824ac1-774e-4e9c-805f-2834f23d48d9",
+            "xmlns:raw": "raw",
+            "xmlns:psesd": "psesd",
+            "xmlns:sif": "http://www.sifassociation.org/datamodel/na/3.3",
+            "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+            "xmlns:xsd": "http://www.w3.org/2001/XMLSchema",
+            "demographics": {
+                "hispanicLatinoEthnicity": "false"
+            },
+            "enrollment": {},
+            "reportDate": "2015-12-08",
+            "transcriptTerm": {
+                "academicSummary": {}
+            },
+            "programs": {
+                "lep": {
+                    "lepStatus": "Unknown",
+                    "perkinsLepStatus": "Unknown",
+                    "title3LepParticipationStatus": "Unknown"
+                },
+                "homeless": "Unknown",
+                "title1": "Unknown",
+                "giftedTalented": {
+                    "enrollmentStatus": "Unknown"
+                },
+                "neglectedDelinquent": "Unknown",
+                "section504": "Unknown",
+                "immigrant": "Unknown",
+                "vocationalConcentrator": "Unknown"
+            }
+        }
+    },
+    {
+        "id": "5694cd26eec6ae1a45fb5a77",
+        "organization": {
+            "refId": "55913fc817aac10c2bbfe1e8",
+            "organizationName": "Helping Hand CBO",
+            "externalServiceId": "5",
+            "authorizedEntityId": "2",
+            "districtStudentId": "11333918",
+            "zoneId": "seattle",
+            "contextId": "CBO"
+        },
+        "env": {
+            "domain": "psesd",
+            "solution": "dev"
+        },
+        "lastResponse": {
+            "statusCode": "500",
+            "statusMessage": "Internal Server Error",
+            "env": {
+                "domain": "psesd",
+                "solution": "dev"
+            },
+            "error": "\"An unexpected error occurred retrieving the student data.The remote server returned an error: (503) Server Unavailable.System.Net.WebException at System.Net.HttpWebRequest.GetResponse()\\r\\n at PRS.SIFUtils.SIFRequestUtils.GetRequest_SIF_HMACSHA256(String url, String sessionToken, String sharedSecret, Dictionary`2 additionalHeaders)\\r\\n at P2CBO.EARS.Api.Controllers.SIFObjectController.<getStudentData>d__20.MoveNext()\"",
+            "attempts": "1"
+        }
+    }
+]

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CBOStudents>
+	<CBOStudent id="56b48d12d303867400a00c50">
+		<organization refId="55913fc817aac10c2bbfe1e7">
+			<organizationName>Super Athletes</organizationName>
+			<externalServiceId>5</externalServiceId>
+			<personnelId></personnelId>
+			<authorizedEntityId>2</authorizedEntityId>
+			<districtStudentId>sample1</districtStudentId>
+			<zoneId>highline</zoneId>
+			<contextId>CBO</contextId>
+		</organization>
+		<programs>
+			<activities>
+			</activities>
+		</programs>
+	</CBOStudent>
+	<CBOStudent id="56b49d80a51d38b700aa1a7e">
+		<organization refId="55913fc817aac10c2bbfe1e7">
+			<organizationName>Super Athletes</organizationName>
+			<externalServiceId>5</externalServiceId>
+			<personnelId></personnelId>
+			<authorizedEntityId>2</authorizedEntityId>
+			<districtStudentId>sample1</districtStudentId>
+			<zoneId>highline</zoneId>
+			<contextId>CBO</contextId>
+		</organization>
+		<programs>
+			<activities>
+			</activities>
+		</programs>
+	</CBOStudent>
+	<CBOStudent id="56cbb060ac5cb372000d23a8">
+		<organization refId="55913fc817aac10c2bbfe1e7">
+			<organizationName>Super Athletes</organizationName>
+			<externalServiceId>5</externalServiceId>
+			<personnelId></personnelId>
+			<authorizedEntityId>2</authorizedEntityId>
+			<districtStudentId>sample1</districtStudentId>
+			<zoneId>highline</zoneId>
+			<contextId>CBO</contextId>
+		</organization>
+		<programs>
+			<activities>
+			</activities>
+		</programs>
+	</CBOStudent>
+	<CBOStudent id="56aef88352a61d0a000d5fbc">
+		<organization refId="55913fc817aac10c2bbfe1e7">
+			<organizationName>Super Athletes</organizationName>
+			<externalServiceId>5</externalServiceId>
+			<personnelId></personnelId>
+			<authorizedEntityId>2</authorizedEntityId>
+			<districtStudentId>13263687</districtStudentId>
+			<zoneId>seattle</zoneId>
+			<contextId>CBO</contextId>
+		</organization>
+		<studentActivity refId="56af10ea02d2160e2cff58d3">
+			<title>Program Test 1</title>
+		</studentActivity>
+		<programs>
+			<activities>
+				<activity>
+					<studentActivityRefId>56af10ea02d2160e2cff58d3</studentActivityRefId>
+					<startDate>02/01/2016</startDate>
+					<endDate>04/30/2016</endDate>
+					<active>true</active>
+					<tags>
+						<tag>Test</tag>
+						<tag>Test2</tag>
+					</tags>
+				</activity>
+			</activities>
+		</programs>
+	</CBOStudent>
+	<CBOStudent id="56aef8d852a61d0a000d5fbe">
+		<organization refId="55913fc817aac10c2bbfe1e7">
+			<organizationName>Super Athletes</organizationName>
+			<externalServiceId>5</externalServiceId>
+			<personnelId></personnelId>
+			<authorizedEntityId>2</authorizedEntityId>
+			<districtStudentId>12125043</districtStudentId>
+			<zoneId>seattle</zoneId>
+			<contextId>CBO</contextId>
+		</organization>
+		<studentActivity refId="56af10f302d2160e2cff58d4">
+			<title>Program Test 2</title>
+		</studentActivity>
+		<programs>
+			<activities>
+				<activity>
+					<studentActivityRefId>56af10f302d2160e2cff58d4</studentActivityRefId>
+					<startDate>02/01/2016</startDate>
+					<endDate>05/31/2016</endDate>
+					<active>true</active>
+					<tags>
+					</tags>
+				</activity>
+			</activities>
+		</programs>
+	</CBOStudent>
+	<CBOStudent id="56aef8a552a61d0a000d5fbd">
+		<organization refId="55913fc817aac10c2bbfe1e7">
+			<organizationName>Super Athletes</organizationName>
+			<externalServiceId>5</externalServiceId>
+			<personnelId></personnelId>
+			<authorizedEntityId>2</authorizedEntityId>
+			<districtStudentId>12084082</districtStudentId>
+			<zoneId>seattle</zoneId>
+			<contextId>CBO</contextId>
+		</organization>
+		<studentActivity refId="56af10ea02d2160e2cff58d3">
+			<title>Program Test 1</title>
+		</studentActivity>
+		<studentActivity refId="56af10f302d2160e2cff58d4">
+			<title>Program Test 2</title>
+		</studentActivity>
+		<studentActivity refId="56af231de466bb8c36e1ffdd">
+			<title>Program Test 3</title>
+		</studentActivity>
+		<programs>
+			<activities>
+				<activity>
+					<studentActivityRefId>56af10ea02d2160e2cff58d3</studentActivityRefId>
+					<startDate>02/01/2016</startDate>
+					<endDate>04/30/2016</endDate>
+					<active>true</active>
+					<tags>
+						<tag>PROGRAM</tag>
+						<tag>TEST</tag>
+					</tags>
+				</activity>
+				<activity>
+					<studentActivityRefId>56af10f302d2160e2cff58d4</studentActivityRefId>
+					<startDate>02/01/2016</startDate>
+					<endDate>05/28/2016</endDate>
+					<active>true</active>
+					<tags>
+					</tags>
+				</activity>
+				<activity>
+					<studentActivityRefId>56af231de466bb8c36e1ffdd</studentActivityRefId>
+					<startDate>02/01/2016</startDate>
+					<endDate>02/04/2016</endDate>
+					<active>true</active>
+					<tags>
+						<tag>2015</tag>
+						<tag>2016</tag>
+					</tags>
+				</activity>
+			</activities>
+		</programs>
+	</CBOStudent>
+	<CBOStudent id="56cbafad8031e3660062d527">
+		<organization refId="55913fc817aac10c2bbfe1e7">
+			<organizationName>Super Athletes</organizationName>
+			<externalServiceId>5</externalServiceId>
+			<personnelId></personnelId>
+			<authorizedEntityId>2</authorizedEntityId>
+			<districtStudentId>sample1</districtStudentId>
+			<zoneId>highline</zoneId>
+			<contextId>CBO</contextId>
+		</organization>
+		<programs>
+			<activities>
+			</activities>
+		</programs>
+	</CBOStudent>
+	<CBOStudent id="56cbb0245c45996c003b8986">
+		<organization refId="55913fc817aac10c2bbfe1e7">
+			<organizationName>Super Athletes</organizationName>
+			<externalServiceId>5</externalServiceId>
+			<personnelId></personnelId>
+			<authorizedEntityId>2</authorizedEntityId>
+			<districtStudentId>sample1</districtStudentId>
+			<zoneId>highline</zoneId>
+			<contextId>CBO</contextId>
+		</organization>
+		<programs>
+			<activities>
+			</activities>
+		</programs>
+	</CBOStudent>
+</CBOStudents>

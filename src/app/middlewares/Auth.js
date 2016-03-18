@@ -12,6 +12,7 @@ var Client = require('../models/Client');
 var Access = require('../access/access');
 var Token = require('../models/Token');
 var tokenHash = require('../../lib/utils').tokenHash;
+var requestIp = require('request-ip');
 
 passport.use(new BasicStrategy(
     
@@ -44,23 +45,41 @@ passport.use(new BasicStrategy(
 ));
 
 
-passport.use(new BearerStrategy(
-
-  function(accessToken, callback) {
+passport.use(new BearerStrategy({ passReqToCallback: true }, function(req, accessToken, callback) {
 
     var accessTokenHash = tokenHash(accessToken);
 
+    var clientIp = requestIp.getClientIp(req);
+
     Token.findOne({ token: accessTokenHash }, function (err, token) {
 
-      if (err) { return callback(err); }
+      if (err) {
+
+        return callback(err);
+
+      }
 
       // No token found
       if (!token) {
+
         return callback(null, false);
+
       }
 
-      //check for expired token
-      if (new Date() > token.expired) {
+      if((typeof token.ip === 'undefined' && clientIp === '127.0.0.1') || token.ip === '*'){
+
+          clientIp = token.ip;
+
+      }
+
+      //check for ip token
+      if(token.ip !== clientIp){
+
+        console.log('IP TOKEN: ', token.ip, ' => CLIENT IP: ', clientIp);
+
+        callback(null, false, { message: 'Token not verified' });
+
+      } else if (new Date() > token.expired) {//check for expired token
 
         token.remove(function (err) {
 
@@ -81,7 +100,7 @@ passport.use(new BearerStrategy(
           if (!user) { return callback(null, false); }
 
           // Simple example with no scope
-          callback(null, user, { scope: '*' });
+          callback(null, user, { scope: '*', token: token });
 
         });
 

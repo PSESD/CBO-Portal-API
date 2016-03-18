@@ -1,0 +1,345 @@
+<xSre refId="bb0120e5-fc3f-4991-836a-2c08dc71a561" xmlns:raw="raw" xmlns:psesd="psesd" xmlns:sif="http://www.sifassociation.org/datamodel/na/3.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <name>
+        <type>FullName</type>
+        <familyName>Sitton</familyName>
+        <givenName>Thuy Dung</givenName>
+    </name>
+    <localId>61454</localId>
+    <stateProvinceId>9135221231</stateProvinceId>
+    <otherIds>
+        <otherId>
+            <id>283108</id>
+        </otherId>
+        <otherId>
+            <id>61454</id>
+        </otherId>
+    </otherIds>
+    <demographics>
+        <races>
+            <race>
+                <race>White</race>
+            </race>
+        </races>
+        <hispanicLatinoEthnicity>true</hispanicLatinoEthnicity>
+        <sex>Male</sex>
+        <birthDate>2001-08-10</birthDate>
+        <raw:source>
+            <raw:races>
+                <raw:race>White</raw:race>
+            </raw:races>
+            <raw:sex>M</raw:sex>
+            <raw:birthDate>2001-08-10</raw:birthDate>
+        </raw:source>
+    </demographics>
+    <enrollment>
+        <leaRefId>d700f533-3b37-4354-965f-d2bf965f5c5e</leaRefId>
+        <schoolRefId>d700f533-3b37-4354-965f-d2bf965f5c5e</schoolRefId>
+        <school refId="d700f533-3b37-4354-965f-d2bf965f5c5e">
+            <leaRefId>7c839911-1a17-4db7-a9cc-d96e53dc0f9d</leaRefId>
+            <localId>8300</localId>
+            <schoolName>Rotating Schedule High School</schoolName>
+        </school>
+        <schoolYear>2016</schoolYear>
+        <entryDate>2015-07-01</entryDate>
+        <exitDate>2016-07-01</exitDate>
+        <gradeLevel>09</gradeLevel>
+        <raw:source>
+            <raw:schoolYear>2016</raw:schoolYear>
+            <raw:entryDate>2015-07-01</raw:entryDate>
+            <raw:exitDate>2016-07-01</raw:exitDate>
+            <raw:gradeLevel>9</raw:gradeLevel>
+        </raw:source>
+    </enrollment>
+    <languages>
+        <language>
+            <type>Dominant</type>
+        </language>
+        <language>
+            <type>Home</type>
+        </language>
+    </languages>
+    <reportDate>2015-12-16</reportDate>
+    <assessments>
+        <assessment>
+            <studentGradeLevel>07</studentGradeLevel>
+            <psesd:title>ELA G7 Performance Task 1 2013-2014</psesd:title>
+        </assessment>
+        <assessment>
+            <studentGradeLevel>07</studentGradeLevel>
+            <psesd:title>Math G7 Performance Task 1 2013-2014</psesd:title>
+        </assessment>
+    </assessments>
+    <transcriptTerm>
+        <school refId="d700f533-3b37-4354-965f-d2bf965f5c5e">
+            <leaRefId>7c839911-1a17-4db7-a9cc-d96e53dc0f9d</leaRefId>
+            <localId>8300</localId>
+            <schoolName>Rotating Schedule High School</schoolName>
+        </school>
+        <schoolYear>2016</schoolYear>
+        <session>
+            <markingTerm>false</markingTerm>
+            <schedulingTerm>false</schedulingTerm>
+            <startDate>2015-07-01</startDate>
+            <endDate>2016-07-01</endDate>
+        </session>
+        <courses>
+            <course refId="c7d8a922-4e72-4e77-adb7-e3d1e626e6c1">
+                <schoolRefId>d700f533-3b37-4354-965f-d2bf965f5c5e</schoolRefId>
+                <schoolCourseId>4610</schoolCourseId>
+                <courseTitle>ALGEBRA I</courseTitle>
+                <description>This course will help students understand the basic structure of algebra, acquire facility in applying abstract concepts and perceive the role of deductive reasoning in algebra. Topics to be studied include symbols, and sets, variable expressions, equations, inequalities, formulas, operations with real numbers, polynomials and factoring, solution of fractional and quadratic equations, field properties, quadratic formula and graphing. Verbal problems are stressed.</description>
+                <subject>ALG</subject>
+                <classSectionId>97757</classSectionId>
+            </course>
+            <course refId="24f1d939-5913-4928-a92e-04ad0c586a5b">
+                <schoolRefId>d700f533-3b37-4354-965f-d2bf965f5c5e</schoolRefId>
+                <schoolCourseId>2590</schoolCourseId>
+                <courseTitle>ENG 9</courseTitle>
+                <description>In this course students will master the different reading, writing and grammar tasks presented on the CAHSEE, will review important reading, writing, and grammar skills and will learn effective strategies to help them perform on the CAHSEE. This level of course content has been approved by the local governing board as intended to correct or improve one’s knowledge in a specified content area.</description>
+                <subject>ELEC</subject>
+                <classSectionId>97772</classSectionId>
+            </course>
+            <course refId="8b5d55b8-fe3d-4668-a870-0081563fdca0">
+                <schoolRefId>d700f533-3b37-4354-965f-d2bf965f5c5e</schoolRefId>
+                <schoolCourseId>6332</schoolCourseId>
+                <courseTitle>ENVIRONMENTAL SCIENCE</courseTitle>
+                <description>Environmental studies</description>
+                <subject>LIF</subject>
+                <classSectionId>97837</classSectionId>
+            </course>
+            <course refId="05d3cc47-faf9-4a77-bcfe-88261f889b30">
+                <schoolRefId>d700f533-3b37-4354-965f-d2bf965f5c5e</schoolRefId>
+                <schoolCourseId>5570</schoolCourseId>
+                <courseTitle>PE I</courseTitle>
+                <description>The theme for the PE – I (9th grade) Core Physical Education student is “Fitness Programs for a Healthy Lifestyle”. The standards aligned curriculum will provide development of motor skills, physical fitness and prepare students to complete the California Fitness Gram. The 9th grade core program will teach rules, strategies, conflict resolution skills, respect for diversity and safety as it relates to each activity. The 9th grade core program is designed to promote a student’s positive self-image and develop socially desirable behavior.</description>
+                <subject>PHED</subject>
+                <classSectionId>97861</classSectionId>
+            </course>
+            <course refId="0895956f-f714-4692-b67e-723b056a5c4f">
+                <schoolRefId>d700f533-3b37-4354-965f-d2bf965f5c5e</schoolRefId>
+                <schoolCourseId>7380</schoolCourseId>
+                <courseTitle>WORLD GEOGRAPHY</courseTitle>
+                <description>This course is designed to engage students in the process of developing geographical understanding of their world. Emphasis will be placed on developing the five themes of geographic education (place and location, character, interaction and movement, and similarities and differences) and on linking those themes to the major world regions. Basic map skills, fundamental concepts of physical and cultural geography, and place name identification will be taught.</description>
+                <subject>WGEO</subject>
+                <classSectionId>97889</classSectionId>
+            </course>
+            <course refId="3d404a23-4243-4ed1-99f6-c26baebbf42c">
+                <schoolRefId>d700f533-3b37-4354-965f-d2bf965f5c5e</schoolRefId>
+                <schoolCourseId>1173</schoolCourseId>
+                <courseTitle>ART HISTORY &amp; EXPRESSION</courseTitle>
+                <description>This course is a chronological survey of Western art and an overview of art and ideas from outside the Western tradition. Geared to freshmen and sophomores, Applied Art and History will provide a hands-on, creative approach to the introduction of the arts with an embedded support for other core subject areas such as English, World Geography and social studies course. This course includes the investigation of art and art history through reading, slides, films, field trips and student created art projects. Special attention will be given to the development of skills and knowledge necessary for written and oral interpretation of art, as well as inquiry in to self-expression and cultural awareness. Student created studio projects will provide exploration of historic media and methods and an understanding of the creative process.</description>
+                <subject>F/VA</subject>
+                <classSectionId>97899</classSectionId>
+            </course>
+            <course refId="3b96dd98-0205-4ca0-831a-f1032e869e7c">
+                <schoolRefId>d700f533-3b37-4354-965f-d2bf965f5c5e</schoolRefId>
+                <schoolCourseId>5110</schoolCourseId>
+                <courseTitle>BEG BAND</courseTitle>
+                <description>This course is designed for students who may wish to learn to play a band instrument or students who are in the early stages of instrumental music development. Basic playing fundamentals of tone, rhythm, counting, and technique are emphasized. Students do not need to have taken any accredited music classes prior to enrollment in this course.</description>
+                <subject>F/VA</subject>
+                <classSectionId>97822</classSectionId>
+            </course>
+        </courses>
+        <academicSummary>
+            <psesd:onTrackToGraduate>Unknown</psesd:onTrackToGraduate>
+        </academicSummary>
+        <raw:source>
+            <raw:schoolYear>2016</raw:schoolYear>
+        </raw:source>
+    </transcriptTerm>
+    <programs>
+        <lep>
+            <lepStatus>Unknown</lepStatus>
+            <perkinsLepStatus>Unknown</perkinsLepStatus>
+            <title3LepParticipationStatus>Unknown</title3LepParticipationStatus>
+        </lep>
+        <homeless>Unknown</homeless>
+        <title1>Unknown</title1>
+        <giftedTalented>
+            <enrollmentStatus>Unknown</enrollmentStatus>
+        </giftedTalented>
+        <neglectedDelinquent>Unknown</neglectedDelinquent>
+        <section504>Unknown</section504>
+        <immigrant>Unknown</immigrant>
+        <vocationalConcentrator>Unknown</vocationalConcentrator>
+    </programs>
+</xSre>
+        </xSre>
+        </CBOStudentsWithXSre><CBOStudentsWithXSre id="5614c9d0dd24ff981f881965">
+<organization refId="55913fc817aac10c2bbfe1e8">
+    <organizationName>Helping Hand CBO</organizationName>
+    <externalServiceId>5</externalServiceId>
+    <authorizedEntityId>2</authorizedEntityId>
+    <districtStudentId>61472</districtStudentId>
+    <zoneId>highline</zoneId>
+    <contextId>CBO</contextId>
+</organization>
+<env>
+    <domain>psesd</domain>
+    <solution>dev</solution>
+</env>
+<lastResponse>
+    <statusCode>200</statusCode>
+    <statusMessage>OK</statusMessage>
+    <env>
+        <domain>psesd</domain>
+        <solution>dev</solution>
+    </env>
+</lastResponse>
+<xSre>
+    <xSre refId="c7c5fdfa-61c2-4ee1-ade5-2a629e776bf3" xmlns:raw="raw" xmlns:psesd="psesd" xmlns:sif="http://www.sifassociation.org/datamodel/na/3.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <name>
+            <type>FullName</type>
+            <familyName>Southwick</familyName>
+            <givenName>Jason</givenName>
+        </name>
+        <localId>61472</localId>
+        <stateProvinceId>2135221345</stateProvinceId>
+        <otherIds>
+            <otherId>
+                <id>283240</id>
+            </otherId>
+            <otherId>
+                <id>61472</id>
+            </otherId>
+        </otherIds>
+        <demographics>
+            <races>
+                <race>
+                    <race>White</race>
+                </race>
+            </races>
+            <hispanicLatinoEthnicity>true</hispanicLatinoEthnicity>
+            <sex>Male</sex>
+            <birthDate>2001-03-04</birthDate>
+            <raw:source>
+                <raw:races>
+                    <raw:race>White</raw:race>
+                </raw:races>
+                <raw:sex>M</raw:sex>
+                <raw:birthDate>2001-03-04</raw:birthDate>
+            </raw:source>
+        </demographics>
+        <enrollment>
+            <leaRefId>2dc0df2c-1588-4b7d-8ce1-3050fad24de3</leaRefId>
+            <schoolRefId>2dc0df2c-1588-4b7d-8ce1-3050fad24de3</schoolRefId>
+            <school refId="2dc0df2c-1588-4b7d-8ce1-3050fad24de3">
+                <leaRefId>32755696-f405-47f5-b6cb-5bdcec77a999</leaRefId>
+                <localId>8300</localId>
+                <schoolName>Rotating Schedule High School</schoolName>
+            </school>
+            <schoolYear>2016</schoolYear>
+            <entryDate>2015-07-01</entryDate>
+            <exitDate>2016-07-01</exitDate>
+            <gradeLevel>09</gradeLevel>
+            <raw:source>
+                <raw:schoolYear>2016</raw:schoolYear>
+                <raw:entryDate>2015-07-01</raw:entryDate>
+                <raw:exitDate>2016-07-01</raw:exitDate>
+                <raw:gradeLevel>9</raw:gradeLevel>
+            </raw:source>
+        </enrollment>
+        <languages>
+            <language>
+                <type>Dominant</type>
+            </language>
+            <language>
+                <type>Home</type>
+            </language>
+        </languages>
+        <reportDate>2015-12-15</reportDate>
+        <assessments>
+            <assessment>
+                <studentGradeLevel>07</studentGradeLevel>
+                <psesd:title>Math G7 Performance Task 1 2013-2014</psesd:title>
+            </assessment>
+        </assessments>
+        <transcriptTerm>
+            <school refId="2dc0df2c-1588-4b7d-8ce1-3050fad24de3">
+                <leaRefId>32755696-f405-47f5-b6cb-5bdcec77a999</leaRefId>
+                <localId>8300</localId>
+                <schoolName>Rotating Schedule High School</schoolName>
+            </school>
+            <schoolYear>2016</schoolYear>
+            <session>
+                <markingTerm>false</markingTerm>
+                <schedulingTerm>false</schedulingTerm>
+                <startDate>2015-07-01</startDate>
+                <endDate>2016-07-01</endDate>
+            </session>
+            <courses>
+                <course refId="da9182e9-0cd9-41dc-bee6-7547ed8e8965">
+                    <schoolRefId>2dc0df2c-1588-4b7d-8ce1-3050fad24de3</schoolRefId>
+                    <schoolCourseId>4610</schoolCourseId>
+                    <courseTitle>ALGEBRA I</courseTitle>
+                    <description>This course will help students understand the basic structure of algebra, acquire facility in applying abstract concepts and perceive the role of deductive reasoning in algebra. Topics to be studied include symbols, and sets, variable expressions, equations, inequalities, formulas, operations with real numbers, polynomials and factoring, solution of fractional and quadratic equations, field properties, quadratic formula and graphing. Verbal problems are stressed.</description>
+                    <subject>ALG</subject>
+                    <classSectionId>97765</classSectionId>
+                </course>
+                <course refId="eff47648-0ac1-4021-9842-3d5624e2484f">
+                    <schoolRefId>2dc0df2c-1588-4b7d-8ce1-3050fad24de3</schoolRefId>
+                    <schoolCourseId>2590</schoolCourseId>
+                    <courseTitle>ENG 9</courseTitle>
+                    <description>In this course students will master the different reading, writing and grammar tasks presented on the CAHSEE, will review important reading, writing, and grammar skills and will learn effective strategies to help them perform on the CAHSEE. This level of course content has been approved by the local governing board as intended to correct or improve one’s knowledge in a specified content area.</description>
+                    <subject>ELEC</subject>
+                    <classSectionId>97773</classSectionId>
+                </course>
+                <course refId="6bfc4cf1-9a9a-44dc-801d-d321ca654ea9">
+                    <schoolRefId>2dc0df2c-1588-4b7d-8ce1-3050fad24de3</schoolRefId>
+                    <schoolCourseId>6332</schoolCourseId>
+                    <courseTitle>ENVIRONMENTAL SCIENCE</courseTitle>
+                    <description>Environmental studies</description>
+                    <subject>LIF</subject>
+                    <classSectionId>97835</classSectionId>
+                </course>
+                <course refId="54a5ad08-8724-47cf-801d-f8a752e1781e">
+                    <schoolRefId>2dc0df2c-1588-4b7d-8ce1-3050fad24de3</schoolRefId>
+                    <schoolCourseId>5570</schoolCourseId>
+                    <courseTitle>PE I</courseTitle>
+                    <description>The theme for the PE – I (9th grade) Core Physical Education student is “Fitness Programs for a Healthy Lifestyle”. The standards aligned curriculum will provide development of motor skills, physical fitness and prepare students to complete the California Fitness Gram. The 9th grade core program will teach rules, strategies, conflict resolution skills, respect for diversity and safety as it relates to each activity. The 9th grade core program is designed to promote a student’s positive self-image and develop socially desirable behavior.</description>
+                    <subject>PHED</subject>
+                    <classSectionId>97867</classSectionId>
+                </course>
+                <course refId="30935386-51f7-4762-b24f-5c8f10173c25">
+                    <schoolRefId>2dc0df2c-1588-4b7d-8ce1-3050fad24de3</schoolRefId>
+                    <schoolCourseId>7380</schoolCourseId>
+                    <courseTitle>WORLD GEOGRAPHY</courseTitle>
+                    <description>This course is designed to engage students in the process of developing geographical understanding of their world. Emphasis will be placed on developing the five themes of geographic education (place and location, character, interaction and movement, and similarities and differences) and on linking those themes to the major world regions. Basic map skills, fundamental concepts of physical and cultural geography, and place name identification will be taught.</description>
+                    <subject>WGEO</subject>
+                    <classSectionId>97883</classSectionId>
+                </course>
+                <course refId="17ef713d-837b-4891-a4ed-5ab824e47b62">
+                    <schoolRefId>2dc0df2c-1588-4b7d-8ce1-3050fad24de3</schoolRefId>
+                    <schoolCourseId>1173</schoolCourseId>
+                    <courseTitle>ART HISTORY &amp; EXPRESSION</courseTitle>
+                    <description>This course is a chronological survey of Western art and an overview of art and ideas from outside the Western tradition. Geared to freshmen and sophomores, Applied Art and History will provide a hands-on, creative approach to the introduction of the arts with an embedded support for other core subject areas such as English, World Geography and social studies course. This course includes the investigation of art and art history through reading, slides, films, field trips and student created art projects. Special attention will be given to the development of skills and knowledge necessary for written and oral interpretation of art, as well as inquiry in to self-expression and cultural awareness. Student created studio projects will provide exploration of historic media and methods and an understanding of the creative process.</description>
+                    <subject>F/VA</subject>
+                    <classSectionId>97820</classSectionId>
+                </course>
+            </courses>
+            <academicSummary>
+                <psesd:onTrackToGraduate>Unknown</psesd:onTrackToGraduate>
+            </academicSummary>
+            <raw:source>
+                <raw:schoolYear>2016</raw:schoolYear>
+            </raw:source>
+        </transcriptTerm>
+        <programs>
+            <lep>
+                <lepStatus>Unknown</lepStatus>
+                <perkinsLepStatus>Unknown</perkinsLepStatus>
+                <title3LepParticipationStatus>Unknown</title3LepParticipationStatus>
+            </lep>
+            <homeless>Unknown</homeless>
+            <title1>Unknown</title1>
+            <giftedTalented>
+                <enrollmentStatus>Unknown</enrollmentStatus>
+            </giftedTalented>
+            <neglectedDelinquent>Unknown</neglectedDelinquent>
+            <section504>Unknown</section504>
+            <immigrant>Unknown</immigrant>
+            <vocationalConcentrator>Unknown</vocationalConcentrator>
+        </programs>
+    </xSre>
+</xSre>
+</CBOStudentsWithXSre></CBOStudentsWithXSres>

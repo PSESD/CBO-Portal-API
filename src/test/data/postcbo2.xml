@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CBOStudents>
+    <CBOStudent id="564996c3891f5cd43c5a89c3">
+        <organization refId="55913fc817aac10c2bbfe1e8">
+            <organizationName>Helping Hand CBO</organizationName>
+            <externalServiceId>5</externalServiceId>
+            <personnelId></personnelId>
+            <authorizedEntityId>2</authorizedEntityId>
+            <districtStudentId>sample2</districtStudentId>
+            <zoneId>test</zoneId>
+            <contextId>CBO</contextId>
+        </organization>
+        <studentActivity refId="55e0b37c0a86ca0d0014e499">
+            <title>Super Athletes - 3</title>
+        </studentActivity>
+        <programs>
+            <activities>
+                <activity>
+                    <studentActivityRefId>55e0b37c0a86ca0d0014e499</studentActivityRefId>
+                    <startDate>11/02/2015</startDate>
+                    <endDate>11/28/2015</endDate>
+                    <active>true</active>
+                    <tags>
+                        <tag>cboby</tag>
+                    </tags>
+                </activity>
+            </activities>
+        </programs>
+    </CBOStudent>
+    <CBOStudent id="56499966891f5cd43c5a89c6">
+        <organization refId="55913fc817aac10c2bbfe1e8">
+            <organizationName>Helping Hand CBO</organizationName>
+            <externalServiceId>5</externalServiceId>
+            <personnelId></personnelId>
+            <authorizedEntityId>2</authorizedEntityId>
+            <districtStudentId>sample2</districtStudentId>
+            <zoneId>test</zoneId>
+            <contextId>CBO</contextId>
+        </organization>
+        <studentActivity refId="55b78a6d09356aa70014f048">
+            <title>Test Program</title>
+        </studentActivity>
+        <studentActivity refId="55e0b37c0a86ca0d0014e499">
+            <title>Super Athletes - 3</title>
+        </studentActivity>
+        <programs>
+            <activities>
+                <activity>
+                    <studentActivityRefId>55e0b37c0a86ca0d0014e499</studentActivityRefId>
+                    <startDate>11/01/2015</startDate>
+                    <endDate>11/30/2015</endDate>
+                    <active>true</active>
+                    <tags>
+                        <tag>open</tag>
+                    </tags>
+                </activity>
+                <activity>
+                    <studentActivityRefId>55b78a6d09356aa70014f048</studentActivityRefId>
+                    <startDate>11/30/2015</startDate>
+                    <endDate>03/12/2016</endDate>
+                    <active>true</active>
+                    <tags>
+                    </tags>
+                </activity>
+            </activities>
+        </programs>
+    </CBOStudent>
+    <CBOStudent id="564999cf891f5cd43c5a89c8">
+        <organization refId="55913fc817aac10c2bbfe1e8">
+            <organizationName>Helping Hand CBO</organizationName>
+            <externalServiceId>5</externalServiceId>
+            <personnelId></personnelId>
+            <authorizedEntityId>2</authorizedEntityId>
+            <districtStudentId>sample2</districtStudentId>
+            <zoneId>tukwila</zoneId>
+            <contextId>CBO</contextId>
+        </organization>
+        <studentActivity refId="55b78a6d09356aa70014f048">
+            <title>Test Program</title>
+        </studentActivity>
+        <studentActivity refId="55e0b37c0a86ca0d0014e499">
+            <title>Super Athletes - 3</title>
+        </studentActivity>
+        <programs>
+            <activities>
+                <activity>
+                    <studentActivityRefId>55e0b37c0a86ca0d0014e499</studentActivityRefId>
+                    <startDate>10/05/2015</startDate>
+                    <endDate>02/11/2016</endDate>
+                    <active>true</active>
+                    <tags>
+                        <tag>elliot</tag>
+                    </tags>
+                </activity>
+                <activity>
+                    <studentActivityRefId>55b78a6d09356aa70014f048</studentActivityRefId>
+                    <startDate>01/01/2016</startDate>
+                    <endDate>10/07/2016</endDate>
+                    <active>true</active>
+                    <tags>
+                    </tags>
+                </activity>
+            </activities>
+        </programs>
+    </CBOStudent>
+</CBOStudents>

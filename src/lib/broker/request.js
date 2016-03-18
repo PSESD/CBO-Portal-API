@@ -2,11 +2,12 @@
 /**
  * Created by zaenal on 03/06/15.
  */
-var config = require('config');
-var request = require('request');
+//var request = require('request');
+var retryRequest = require('retry-request');
 var moment = require('moment');
 var uuid = require('node-uuid');
 var CryptoJS = require("crypto-js");
+var utils = require('../utils'), config = utils.config(), cache = utils.cache(), log = utils.log, md5 = utils.md5, benchmark  = utils.benchmark();
 /**
  *
  * @param options
@@ -163,9 +164,22 @@ RequestXSRE.prototype = {
             timeout: 60000 // timeout 1 minute
         };
 
+        var opts = {
+            retries: 3,
+            /**
+             *
+             * @param incomingHttpMessage
+             * @returns {boolean}
+             */
+            shouldRetryFn: function (incomingHttpMessage) {
+                return incomingHttpMessage.statusCode !== 200;
+            }
+        };
+
         //console.dir(options);
 
-        return request.get(options, callback || function (error, response, body) {
+        //return request.get(options, callback || function (error, response, body) {
+        return retryRequest(options, opts, callback || function (error, response, body) {
 
             if(error){
 
@@ -244,9 +258,10 @@ RequestXSRE.prototype = {
      * @param districtStudentId
      * @param zoneId
      * @param callback
-     * @returns {*|request}
+     * @param forceStore
+     * @returns {*}
      */
-    createXsre: function(districtStudentId, zoneId, callback){
+    createXsre: function(districtStudentId, zoneId, callback, forceStore){
 
         if(this.options.personnelId) {
 
@@ -284,10 +299,75 @@ RequestXSRE.prototype = {
 
         this.addHeader('messageId', this.generateUUID());
 
-        return this.create('xsre', url, 'GET', callback);
+        var key = md5([url, this.headers.personnelId, this.headers.authorizedEntityId, this.headers.externalServiceId].join('_'));
+
+        if(typeof callback !== 'function'){
+
+            callback = function(error, response, body){
+              console.log('ERROR: ', error);
+              console.log('RESPONSE: ', response);
+              console.log('BODY: ', body);
+            };
+
+        }
+
+        var me = this;
+
+        benchmark.info('REQUEST-XSRE-HZB: START');
+
+        cache.get(key, function(err, result){
+
+            var encBody;
+
+            if(err || !result || (result.body && !(encBody = utils.decrypt(result.body))) || forceStore === true){
+
+                me.create('xsre', url, 'GET', function (error, response, body) {
+
+                    if (error)  {
+                        return callback(error, response, body);
+                    }
+
+                    var object = {
+                        body: utils.encrypt(body),
+                        response: response
+                    };
+
+                    cache.set(key, object, {ttl: 86400}, function(){
+
+                        benchmark.info('REQUEST-XSRE-HZB: STORE DATA TO CACHE');
+
+                        callback(error, response, body);
+
+                    });
+
+                });
+
+            } else {
+
+                benchmark.info('REQUEST-XSRE-HZB: GET DATA FROM CACHE');
+
+                callback(null, result.response, encBody);
+
+            }
+        });
 
     },
+    /**
+     *
+     * @param districtStudentId
+     * @param zoneId
+     * @param organization
+     * @returns {*}
+     */
+    clearCacheXsreKey: function(districtStudentId, zoneId, organization){
 
+        var config = this.config.xsre;
+
+        var url = '/requestProvider/' + config.service +'/'+districtStudentId+';zoneId='+zoneId+';contextId='+ config.contextId;
+
+        return md5([url, organization.personnelId, organization.authorizedEntityId, organization.externalServiceId].join('_'));
+
+    },
     /**
      *
      * @param uri

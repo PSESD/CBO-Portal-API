@@ -5,8 +5,6 @@ var mongoose = require('mongoose');
 var bodyParser  = require("body-parser");
 var cookieParser = require('cookie-parser');
 var csrf = require('csurf');
-var csrfProtection = csrf({ cookie: true });
-var parseForm = bodyParser.urlencoded({ extended: false });
 
 var app  = express();
 var session = require('express-session');
@@ -20,13 +18,23 @@ var hal = require('hal');
 var xmlmodel = require('./lib/xmlmodel');
 var utils = require('./lib/utils');
 var rollbarAccessToken = config.get('rollbar.access_token');
+var compress = require('compression');
+i18n.configure({
+    locales:['en'],
+    directory: __dirname + '/resource/lang'
+});
+app.use(compress());
 
 if (rollbarAccessToken) {
 
-    // Use the rollbar error handler to send exceptions to your rollbar account
-    app.use(rollbar.errorHandler(rollbarAccessToken, {handler: 'inline'}));
-
-    rollbar.handleUncaughtExceptions(rollbarAccessToken, { exitOnUncaughtException: true });
+      // Use the rollbar error handler to send exceptions to your rollbar account
+      app.use(rollbar.errorHandler(rollbarAccessToken, {handler: 'inline'}));
+      var rollbarEnv = config.util.getEnv('NODE_ENV');
+      // Configure the library to send errors to api.rollbar.com
+      rollbar.init(rollbarAccessToken, {
+            environment: rollbarEnv
+      });
+      rollbar.handleUncaughtExceptions(rollbarAccessToken, { exitOnUncaughtException: true });
 
 }
 
@@ -47,6 +55,8 @@ function Api() {
     self.routeDir = self.baseDir + '/app/routes';
 
     self.libDir = self.baseDir + '/lib';
+
+    self.middlewareDir = self.baseDir + '/app/middlewares';
 
     self.config = config;
 
@@ -96,6 +106,14 @@ Api.prototype.controller = function (name, newInstance) {
     }
 
     return obj;
+
+};
+/**
+ * load middleware
+ */
+Api.prototype.middleware = function (name) {
+
+    return require(this.middlewareDir + '/' + name);
 
 };
 /**
@@ -263,7 +281,6 @@ Api.prototype.configureExpress = function (db) {
 
                     return res.send(xmlmodel(data, res.xmlOptions || 'response'));
 
-
             }
 
             return res.send(data);
@@ -365,11 +382,27 @@ Api.prototype.configureExpress = function (db) {
         res.sendError = function (err) {
 
             if(!req.params.format) {
+
                 req.params.format = 'json';
+
             }
 
             if(err === 'Access Denied' || err === 'Permission Denied') {
+
                 return res.errUnauthorized();
+
+            }
+
+            /**
+             * Mongoose error duplicate
+             */
+            if(err.code && (err.code === 11000 || err.code === 11001)){
+
+                err = {
+                    code: err.code,
+                    message: res.__('errors.' + err.code)
+                };
+
             }
 
             var response = { success: false, error: err };
@@ -427,8 +460,6 @@ Api.prototype.configureExpress = function (db) {
  * Start Server
  */
 Api.prototype.startServer = function () {
-
-    var me = this;
 
     app.listen(port, function () {
 
@@ -491,7 +522,9 @@ Api.prototype.stop = function (err) {
     console.log("ERROR \n" + err.stack);
 
     if (rollbarAccessToken) {
+
         rollbar.reportMessage("ERROR \n" + err);
+
     }
 
     process.exit(1);

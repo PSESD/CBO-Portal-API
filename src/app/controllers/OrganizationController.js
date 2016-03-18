@@ -5,10 +5,12 @@
 var mongoose = require('mongoose');
 var Organization = require('../models/Organization');
 var Program = require('../models/Program');
+var Student = require('../models/Student');
 var User = require('../models/User');
 var Access = require('../access/access').getInstance();
 var BaseController = require('./BaseController');
 var php = require('phpjs');
+var async = require('async');
 var _ = require('underscore');
 var ObjectId = mongoose.Types.ObjectId;
 var OrganizationController = new BaseController(Organization).crud('organizationId');
@@ -86,7 +88,9 @@ OrganizationController.updateProfile = function(req, res){
 
         if (err) { return res.sendError(err); }
 
-        if (!obj) return res.sendError('Data not found');
+        if (!obj) {
+            return res.sendError(res.__('data_not_found'));
+        }
 
         for (var prop in req.body) {
 
@@ -107,7 +111,7 @@ OrganizationController.updateProfile = function(req, res){
 
             res.xmlOptions = 'organization';
 
-            res.sendSuccess('Successfully updated!', obj);
+            res.sendSuccess(res.__('data_updated'), obj);
 
         });
     });
@@ -120,8 +124,53 @@ OrganizationController.updateProfile = function(req, res){
  */
 OrganizationController.allUsers = function (req, res) {
 
+    var criteria = { permissions: { $elemMatch: { organization: ObjectId(req.params.organizationId), activate: true }}};
 
-    User.find({permissions: {$elemMatch: {organization: ObjectId(req.params.organizationId)}}}, function (err, users) {
+    if(req.query.pending){
+        criteria = { permissions: { $elemMatch: { organization: ObjectId(req.params.organizationId) }}};
+    }
+    //User.find({permissions: {$elemMatch: {organization: ObjectId(req.params.organizationId)}}}, function (err, users) {
+    User.find(criteria, function (err, users) {
+
+        if (err)  { return res.sendError(err); }
+
+        var tmp = [];
+
+        users.forEach(function(user){
+
+            var permission = user.getCurrentPermission(req.params.organizationId);
+
+            var obj = user.toJSON();
+
+            if(obj._id.toString() !== req.user._id.toString()){
+
+                delete obj.permissions;
+
+            }
+
+            tmp.push(obj);
+
+        });
+
+        res.xmlKey = 'users';
+
+        res.sendSuccess(null, tmp);
+
+    });
+
+
+};
+
+/**
+ *
+ * @param req
+ * @param res
+ */
+OrganizationController.pending = function (req, res) {
+
+    var crit = { permissions: { $elemMatch: { organization: ObjectId(req.params.organizationId), activate: false }}};
+
+    User.find(crit, function (err, users) {
 
         if (err)  { return res.sendError(err); }
 
@@ -149,7 +198,6 @@ OrganizationController.allUsers = function (req, res) {
 
     });
 
-
 };
 
 /**
@@ -167,7 +215,9 @@ OrganizationController.getUser = function (req, res) {
 
         if (err)  { return res.sendError(err); }
 
-        if(!user) return res.sendError('User not found!');
+        if(!user) {
+            return res.sendError(res.__('user_not_found'));
+        }
 
         user.getCurrentPermission(req.params.organizationId);
 
@@ -194,13 +244,19 @@ OrganizationController.postUser = function (req, res) {
 
     var permissions = {};
 
-    if (req.body.organization) permissions.organization = ObjectId(req.body.organization);
+    if (req.body.organization) {
+        permissions.organization = ObjectId(req.body.organization);
+    }
 
     permissions.students = req.body.students || [];
 
     permissions.role = req.body.role || 'case-worker';
 
     permissions.is_special_case_worker = req.body.is_special_case_worker || false;
+
+    permissions.activate = req.body.activate || true;
+
+    permissions.activateStatus = permissions.activate ? 'Active' : 'Pending';
 
     permissions.students = req.body.students || [];
 
@@ -214,13 +270,17 @@ OrganizationController.postUser = function (req, res) {
 
     permissions.last_updated_by = req.user.userId;
 
-    if (_.isEmpty(permissions)) return res.sendError('POST parameter is empty!');
+    if (_.isEmpty(permissions)) {
+        return res.sendError(res.__('parameter_required'));
+    }
 
     User.findOne({_id: ObjectId(userId)}, function (err, user) {
 
         if (err)  { return res.sendError(err); }
 
-        if (!user) return res.sendError('User data not found');
+        if (!user) {
+            return res.sendError(res.__('user_not_found'));
+        }
 
         var allpermission = [];
 
@@ -241,7 +301,9 @@ OrganizationController.postUser = function (req, res) {
             }
         }
 
-        if(allpermission.length === 0) allpermission.push(permissions);
+        if(allpermission.length === 0) {
+            allpermission.push(permissions);
+        }
 
 
 
@@ -255,7 +317,7 @@ OrganizationController.postUser = function (req, res) {
 
             res.xmlOptions = 'user';
 
-            res.sendSuccess('Organization successfully add to User', user);
+            res.sendSuccess(res.__('success_add_to', { name: 'Organization', to: 'User'}), user);
 
         });
 
@@ -280,7 +342,7 @@ OrganizationController.putUser = function (req, res) {
 
             if('retype_password' in req.body && req.body.password !== req.body.retype_password){
 
-                return res.sendError('Password didn\'t match');
+                return res.sendError(res.__('password_not_match'));
 
             } else if(!req.body.password){
 
@@ -305,7 +367,9 @@ OrganizationController.putUser = function (req, res) {
 
         if (err) { return res.sendError(err); }
 
-        if (!obj) return res.sendError('Data not found');
+        if (!obj) {
+            return res.sendError(res.__('data_not_found'));
+        }
 
 
         // set update time and update by user
@@ -317,7 +381,9 @@ OrganizationController.putUser = function (req, res) {
 
         ["first_name", "middle_name", "last_name", "password", "is_super_admin"].forEach(function(prop){
 
-            if(prop in req.body) obj[prop] = req.body[prop];
+            if(prop in req.body) {
+                obj[prop] = req.body[prop];
+            }
 
         });
 
@@ -329,15 +395,25 @@ OrganizationController.putUser = function (req, res) {
              */
             if(req.user._id.toString() === obj._id.toString() && req.user.isAdmin()){
 
-                if(role.indexOf('case-worker') !== -1) return res.sendError("Admin never be able to downgrade itself to a case worker");
+                if(role.indexOf('case-worker') !== -1) {
+                    return res.sendError(res.__('admin_never_able_to_downgrade'));
+                }
 
             }
 
-            obj.saveWithRole(req.user, req.params.organizationId, role, function (err, user) {
+            var fields = { role: role };
+
+            if(req.body.activate){
+
+                fields.activate = req.body.activate ? true : false;
+
+            }
+
+            obj.saveWithRole(req.user, req.params.organizationId, fields, function (err, user) {
 
                 if (err)  { return res.sendError(err); }
 
-                res.sendSuccess('Successfully updated!', user);
+                res.sendSuccess(res.__('data_updated'), user);
 
             });
 
@@ -347,7 +423,7 @@ OrganizationController.putUser = function (req, res) {
 
                 if (err)  { return res.sendError(err); }
 
-                res.sendSuccess('Successfully updated!', user);
+                res.sendSuccess(res.__('data_updated'), user);
 
             });
 
@@ -369,13 +445,15 @@ OrganizationController.deleteUser = function (req, res) {
         if (err)  { return res.sendError(err); }
 
 
-        if (!user) return res.sendError("User not found");
+        if (!user) {
+            return res.sendError(res.__('user_not_found'));
+        }
 
         var allpermission = [];
 
         for (var i = 0; i < user.permissions.length; i++) {
 
-            if (req.params.organizationId != (user.permissions[i].organization + '')) {
+            if (req.params.organizationId !== (user.permissions[i].organization + '')) {
 
                 allpermission.push(user.permissions[i]);
 
@@ -386,7 +464,7 @@ OrganizationController.deleteUser = function (req, res) {
 
             if (err)  { return res.sendError(err); }
 
-            res.sendSuccess('Delete success');
+            res.sendSuccess(res.__('data_deleted'));
 
         });
     });
@@ -405,11 +483,63 @@ OrganizationController.allProgram = function (req, res) {
 
     crit.organization = ObjectId(req.params.organizationId);
 
-    Program.find(crit, function (err, objs) {
+    Program.find(crit, function (err, programs) {
 
-        if (err) { return res.sendError(err); }
+        if (err) {
+            return res.sendError(err);
+        }
 
-        res.sendSuccess(null, objs);
+        var ids = [];
+        var ps = [];
+        var psi = {};
+        var i = 0;
+        programs.forEach(function(p){
+            ids.push(p._id);
+            var c = {
+                _id: p._id,
+                name: p.name,
+                organization: p.organization,
+                totalStudent: 0,
+                totalActive: 0,
+                cohorts: [],
+                created: p.created,
+                creator: p.creator,
+                last_updated: p.last_updated,
+                last_updated_by: p.last_updated_by
+            };
+            psi[p._id.toString()] = i;
+            ps.push(c);
+            i++;
+        });
+
+        Student.protect(req.user.role, { onlyAssign: true }, req.user).find({ organization: crit.organization, programs: { $elemMatch: { program: { $in: ids } } } }, function(err, students){
+
+            if (err)  { return res.sendError(err); }
+
+            students.forEach(function(s){
+                s.programs.forEach(function(sp){
+                    var id = sp.program + '';
+                    if(id in psi){
+                        var j = psi[id];
+                        ps[j].totalStudent++;
+                        if(sp.active === true){
+                            ps[j].totalActive++;
+                        }
+                        if(sp.cohort){
+                            sp.cohort.forEach(function(c){
+                                if(ps[j].cohorts.indexOf(c) === -1){
+                                    ps[j].cohorts.push(c);
+                                }
+                            });
+                        }
+
+                    }
+                });
+            });
+
+            res.sendSuccess(null, ps);
+
+        });
 
     });
 
@@ -433,7 +563,7 @@ OrganizationController.getProgram = function (req, res) {
 
         if (err) { return res.sendError(err); }
 
-        if (!obj) return res.sendError('Data not found');
+        if (!obj) return res.sendError(res.__('data_not_found'));
 
         res.sendSuccess(obj);
 
@@ -478,7 +608,7 @@ OrganizationController.postProgram = function (req, res) {
 
             if (err)  { return res.sendError(err); }
 
-            res.sendSuccess('Successfully Added', obj);
+            res.sendSuccess(res.__('data_added'), obj);
 
         });
 
@@ -498,7 +628,7 @@ OrganizationController.putProgram = function (req, res) {
 
         if (err) { return res.sendError(err); }
 
-        if (!obj) return res.sendError('Data not found');
+        if (!obj) return res.sendError(res.__('data_not_found'));
 
         for (var prop in req.body) {
 
@@ -519,7 +649,7 @@ OrganizationController.putProgram = function (req, res) {
 
             if (err)  { return res.sendError(err); }
 
-            res.sendSuccess('Successfully updated!', obj);
+            res.sendSuccess(res.__('data_updated'), obj);
 
         });
 
@@ -540,7 +670,7 @@ OrganizationController.deleteProgram = function (req, res) {
 
         if (err)  { return res.sendError(err); }
 
-        res.sendSuccess('Successfully deleted');
+        res.sendSuccess(res.__('data_deleted'));
 
     });
 

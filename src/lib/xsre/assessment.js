@@ -26,7 +26,8 @@ function Assessment(xsre){
 
       this.config = xsre.config;
 
-      this.notAvailable = 'N/A';
+      //this.notAvailable = 'N/A';
+      this.notAvailable = '';
 
       this.facets = xsre.facets;
 

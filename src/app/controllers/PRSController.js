@@ -42,7 +42,7 @@ PRSController.getDistricts = function (req, res) {
                 }
 
                 if (!body) {
-                    return res.sendError('Data not found');
+                    return res.sendError(res.__('data_not_found'));
                 }
 
                 if (response && response.statusCode === '200') {
@@ -67,7 +67,7 @@ PRSController.getDistricts = function (req, res) {
 
                     utils.xml2js(body, function (err, result) {
 
-                        var json = (result && 'error' in result) ? result.error.message : 'Error not response';
+                        var json = (result && 'error' in result) ? result.error.message : res.__('error_response');
 
                         res.sendError(json);
 
@@ -101,11 +101,11 @@ PRSController.deleteCacheDistricts = function (req, res) {
 
             log(err, 'error');
 
-            return res.sendError('Delete cache error');
+            return res.sendError(res.__('cache_deleted_error'));
 
         }
 
-        res.sendSuccess('Delete cache successfully');
+        res.sendSuccess(res.__('cache_deleted'));
 
     });
 

@@ -7,7 +7,9 @@ var mongoose = require('mongoose');
 var Address = require('./schema/Address');
 var Student = require('./Student');
 var Program = require('./Program');
-var config = require('config'), xsreConfig = config.get('hzb').xsre;
+var utils = require('../../lib/utils');
+var config = utils.config();
+var xsreConfig = config.get('hzb').xsre;
 var _ = require('underscore');
 var xmlParser = require('js2xmlparser');
 var moment = require('moment');
@@ -213,7 +215,7 @@ OrganizationSchema.statics.pushStudent = function(user, orgId, stdId, callback){
         };
 
         if(user){
-            Student.protect(user.role, {value: stdId}, user).findOne({
+            Student.protect(user.role, { students: stdId, value: stdId }, user).findOne({
                 _id: ObjectId(stdId),
                 organization: ObjectId(orgId)
             }, cb);

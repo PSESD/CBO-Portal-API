@@ -26,7 +26,9 @@ StudentCache.cache = function () {
 
       Organization.find({}, function(err, organizations){
 
-            if(err) return log(err);
+            if(err) {
+                return log(err);
+            }
 
             _.each(organizations, function(organization){
 
@@ -40,13 +42,17 @@ StudentCache.cache = function () {
 
                               var studentId = student._id;
 
-                              if(err) return log(err);
+                              if(err) {
+                                  return log(err);
+                              }
                               /**
                                * If student is empty from database
                                */
-                              if(!student) return log('The student not found in database');
+                              if(!student) {
+                                  return log('The student not found in database');
+                              }
 
-                              var key = md5([orgId.toString(), studentId.toString(), student.district_student_id, student.school_district, req.params.format].join('_'));
+                              var key = md5([orgId.toString(), studentId.toString(), student.district_student_id, student.school_district].join('_'));
 
                               var brokerRequest = new Request({
                                     externalServiceId: organization.externalServiceId,
@@ -56,11 +62,11 @@ StudentCache.cache = function () {
 
                               brokerRequest.createXsre(student.district_student_id, student.school_district, function(error, response, body){
 
-                                    if(error)  return log(error);
+                                    if(error)  {
+                                        return log(error);
+                                    }
 
                                     if(!body){
-
-                                          res.statusCode = response.statusCode || 404;
 
                                           return log('Data not found in database xsre');
 
@@ -70,7 +76,9 @@ StudentCache.cache = function () {
 
                                           utils.xml2js(body, function(err, result){
 
-                                                if(err) return log(err);
+                                                if(err) {
+                                                    return log(err);
+                                                }
 
                                                 var object = new xSre(result, body).toObject();
                                                 /**
@@ -98,7 +106,7 @@ StudentCache.cache = function () {
 
                         });
                   });
-            })
+            });
 
       });
 };

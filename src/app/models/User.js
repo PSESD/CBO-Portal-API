@@ -101,12 +101,21 @@ UserSchema.methods.saveWithRole = function(user, organizationId, role, cb){
 
     var caseWorkerUnrestricted = false;
 
+    var otherFilledUpdate = null;
+
     if(typeof role === 'function'){
         cb = role;
         role = this._role;
         caseWorkerUnrestricted = this._caseWorkerUnrestricted;
     } else {
-        this._role = role;
+        if(typeof role === 'string'){
+            this._role = role;
+        } else if(typeof role === 'object' && 'role' in role){
+            this._role = role.role;
+            otherFilledUpdate = _.clone(role);
+            delete otherFilledUpdate.role;
+            role = role.role;
+        }
         this._caseWorkerUnrestricted = caseWorkerUnrestricted = (role === 'case-worker-unrestricted');
     }
 
@@ -131,6 +140,11 @@ UserSchema.methods.saveWithRole = function(user, organizationId, role, cb){
     if(this.getIndexCurrentPermission() in this.permissions){
         if(typeof role === 'string' && this.permissions[this.getIndexCurrentPermission()].role !== role) {
             this.permissions[this.getIndexCurrentPermission()].role = role;
+        }
+        if(otherFilledUpdate !== null){
+            for(var o in otherFilledUpdate){
+                this.permissions[this.getIndexCurrentPermission()][o] = otherFilledUpdate[o];
+            }
         }
     }
 
@@ -268,6 +282,15 @@ UserSchema.virtual('caseWorkerRestricted').set(function(caseWorkerRestricted){
 });
 /**
  *
+ */
+UserSchema.virtual('activate').get(function(){
+    if(typeof this._activate === undefined){
+        this.getCurrentPermission();
+    }
+    return this._activate ? true: false;
+});
+/**
+ *
  * @param organizationId
  * @returns {*}
  */
@@ -296,9 +319,11 @@ UserSchema.methods.getCurrentPermission = function(organizationId){
     if(this.orgId in this._currentPermission) {
         this._role = this._currentPermission[this.orgId].role;
         this._caseWorkerUnrestricted = this._currentPermission[this.orgId].role === 'case-worker-unrestricted';
+        this._activate = this._currentPermission[this.orgId].activate;
     } else {
         this._role = undefined;
         this._caseWorkerUnrestricted = undefined;
+        this._activate = undefined;
         return {
             role: undefined,
             organization: undefined,
@@ -391,10 +416,9 @@ UserSchema.virtual('forgotPassword')
 UserSchema.virtual('organizationId').get(function(){
   var _id = [];
   if(this.permissions.length > 0){
-      
-      this.permissions.forEach(function(organization){
-          _id.push(organization.organization.toString());
-      });
+      for(var i = 0; i < this.permissions.length; i++){
+          _id[i] = this.permissions[i].organization.toString();
+      }
   }
   return _id;
 });
@@ -512,6 +536,8 @@ UserSchema.method('toJSON', function(){
     delete user.allStudents;
     delete user.organizationId;
     delete user.hashedForgotPasswordExpire;
+    delete user.hashedForgotPassword;
+    delete user.hashedAuthCode;
     delete user.__v;
     delete user.is_super_admin;
     var fullname = [];
@@ -532,6 +558,7 @@ UserSchema.method('toJSON', function(){
     }
 
     user.full_name = fullname.join(' ');
+    user.studentCount = user.allStudentsByOrganization.length;
 
     return user;
 });

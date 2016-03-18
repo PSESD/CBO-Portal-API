@@ -36,3 +36,4 @@ src/node_modules
 *.log
 config
 src/config
+src/logs/*

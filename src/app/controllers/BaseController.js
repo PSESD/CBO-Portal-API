@@ -55,7 +55,7 @@ BaseController.prototype.crud = function(idName) {
                     return res.sendError(err);
                 }
 
-                return res.sendSuccess('Successfully Added', obj);
+                return res.sendSuccess(res.__('data_added'), obj);
 
             });
         },
@@ -73,7 +73,7 @@ BaseController.prototype.crud = function(idName) {
                 }
 
                 if(!obj) {
-                    return res.sendError('Data not found');
+                    return res.sendError(res.__('data_not_found'));
                 }
 
                 for (var prop in req.body) {
@@ -100,7 +100,7 @@ BaseController.prototype.crud = function(idName) {
                         return res.sendError(err);
                     }
 
-                    res.sendSuccess('Successfully updated!', obj);
+                    res.sendSuccess(res.__('data_updated'), obj);
 
                 });
             });
@@ -151,7 +151,7 @@ BaseController.prototype.crud = function(idName) {
 
                 if (err) { return res.sendError(err); }
 
-                res.sendSuccess('Successfully deleted');
+                res.sendSuccess(res.__('data_deleted'));
 
             });
         }

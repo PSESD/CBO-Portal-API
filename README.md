@@ -84,10 +84,24 @@ The following examples configuration in JSON format.
         "token": {
             "expires_in": 3600
         },
+        "ratelimiter": {
+            "windowMs": 60000,
+            "delayAfter": 1,
+            "delayMs": 1000,
+            "max": 5,
+            "message": "Too many requests, please try again later.",
+            "statusCode": 429
+        },
         "db": {
             "mongo": {
                 "host": "<mongodb host>",
                 "name": "<mongodb name>"
+            },
+            "mysql": {
+                "host": "<mysql host>",
+                "user": "<mysql user>",
+                "password": "<mysql password>",
+                "database": "ssl_cbo"
             }
         },
         "session": {
@@ -95,7 +109,6 @@ The following examples configuration in JSON format.
             "saveUninitialized": true,
             "resave": true
         },
-    
         "mandrill": {
             "api_key": "<api_key>"
         },
@@ -124,20 +137,58 @@ The following examples configuration in JSON format.
                  "url": "<api end point>",
                 "sessionToken": "<session token>",
                 "sharedSecret": "<secret>",
-                "object": "sres",
-                "service": "sres",
-                "contextId": "DEFAULT",
+                "object": "xSres",
+                "service": "xSres",
+                "contextId": "CBO",
                 "headers": {
                     "serviceType": "OBJECT",
                     "requestType": "IMMEDIATE",
                     "requestAction": "QUERY",
                     "messageType": "REQUEST",
-                    "objectType": "xsre",
+                    "objectType": "xSre",
                     "Accept": "application/xml",
                     "Content-Type": "application/xml"
                 },
                 "validation-url": "",
                 "validation-service": ""
+            },
+            "CBOStudent": {
+                "push": {
+                    "url": "<api end point>",
+                    "sessionToken": "<session token>",
+                    "sharedSecret": "<secret>",
+                    "object": "xSres",
+                    "service1": "CBOStudents",
+                    "service2": "CBOStudentsWithXSres",
+                    "zoneId": "CBOUniversal",
+                    "contextId": "DEFAULT",
+                    "headers": {
+                        "mustuseadvisory": true,
+                        "requestType": "DELAYED",
+                        "messageType": "REQUEST",
+                        "objectType": "CBOStudent",
+                        "requestAction": "QUERY",
+                        "Content-Type": "application/xml"
+                    }
+                },
+                "get": {
+                    "url": "<api end point>",
+                    "sessionToken": "<session token>",
+                    "sharedSecret": "<secret>",
+                    "object": "xSres",
+                    "service1": "CBOStudents",
+                    "service2": "CBOStudentsWithXSres",
+                    "zoneId": "CBOUniversal",
+                    "contextId": "DEFAULT",
+                    "headers": {
+                        "mustuseadvisory": true,
+                        "requestType": "IMMEDIATE",
+                        "messageType": "REQUEST",
+                        "objectType": "CBOStudentsWithXSre",
+                        "requestAction": "QUERY",
+                        "Content-Type": "application/xml"
+                    }
+                }
             },
             "prs": {
                 "url": "<api end point>",
@@ -166,6 +217,7 @@ The following examples configuration in JSON format.
             "aws_secret_access_key":""
         },
         "cache": {
+            "enable": true,
             "adapter": "memory",
             "backup": "redis",
             "redis": {
@@ -180,6 +232,13 @@ The following examples configuration in JSON format.
             }
         }
     }
+    
+    
+**Edit config environment variable, this will be used on the cronjob CLI process**
+    
+    $ vi src/config/.env
+    
+    NODE_ENV=development
 
 **Edit config overrides for production deployment:**
 
@@ -196,10 +255,24 @@ The following examples configuration in JSON format.
             "token": {
                 "expires_in": 3600
             },
+            "ratelimiter": {
+                "windowMs": 60000,
+                "delayAfter": 1,
+                "delayMs": 1000,
+                "max": 5,
+                "message": "Too many requests, please try again later.",
+                "statusCode": 429
+            },
             "db": {
                 "mongo": {
                     "host": "<mongodb host>",
                     "name": "<mongodb name>"
+                },
+                "mysql": {
+                    "host": "<mysql host>",
+                    "user": "<mysql user>",
+                    "password": "<mysql password>",
+                    "database": "ssl_cbo"
                 }
             },
             "session": {
@@ -207,27 +280,97 @@ The following examples configuration in JSON format.
                 "saveUninitialized": true,
                 "resave": true
             },
-        
             "mandrill": {
                 "api_key": "<api_key>"
             },
-            "hz": {
-                "hzUri": "<hzUri>",
-                "hzSessionToken": "<hzSessionToken>",
-                "hzSharedSecret": "<hzSharedSecret>",
-                "object": "<object>",
-                "service": "<service>",
-                "contextId": "CBO",
-                "validation-url": "<validation-url>",
-                "validation-service": "<validation-service?",
-                "serviceType": "OBJECT",
-                "requestType": "IMMEDIATE",
-                "requestAction": "QUERY",
-                "messageType": "REQUEST",
-                "objectType": "<objectType>",
-                "prsBaseUri": "<prsBaseUri>",
-                "prsSessionToken": "<prsSessionToken>",
-                "prsSharedSecret": "<prsSharedSecret>"
+            "hzb": {
+                "default": "xsre",
+                "sre": {
+                     "url": "<api end point>",
+                    "sessionToken": "<session token>",
+                    "sharedSecret": "<secret>",
+                    "object": "sres",
+                    "service": "sres",
+                    "contextId": "CBO",
+                    "headers": {
+                        "serviceType": "OBJECT",
+                        "requestType": "IMMEDIATE",
+                        "requestAction": "QUERY",
+                        "messageType": "REQUEST",
+                        "objectType": "sre",
+                        "Accept": "application/xml",
+                        "Content-Type": "application/xml"
+                    },
+                    "validation-url": "",
+                    "validation-service": ""
+                },
+                "xsre": {
+                     "url": "<api end point>",
+                    "sessionToken": "<session token>",
+                    "sharedSecret": "<secret>",
+                    "object": "xSres",
+                    "service": "xSres",
+                    "contextId": "CBO",
+                    "headers": {
+                        "serviceType": "OBJECT",
+                        "requestType": "IMMEDIATE",
+                        "requestAction": "QUERY",
+                        "messageType": "REQUEST",
+                        "objectType": "xSre",
+                        "Accept": "application/xml",
+                        "Content-Type": "application/xml"
+                    },
+                    "validation-url": "",
+                    "validation-service": ""
+                },
+                "CBOStudent": {
+                    "push": {
+                        "url": "<api end point>",
+                        "sessionToken": "<session token>",
+                        "sharedSecret": "<secret>",
+                        "object": "xSres",
+                        "service1": "CBOStudents",
+                        "service2": "CBOStudentsWithXSres",
+                        "zoneId": "CBOUniversal",
+                        "contextId": "DEFAULT",
+                        "headers": {
+                            "mustuseadvisory": true,
+                            "requestType": "DELAYED",
+                            "messageType": "REQUEST",
+                            "objectType": "CBOStudent",
+                            "requestAction": "QUERY",
+                            "Content-Type": "application/xml"
+                        }
+                    },
+                    "get": {
+                        "url": "<api end point>",
+                        "sessionToken": "<session token>",
+                        "sharedSecret": "<secret>",
+                        "object": "xSres",
+                        "service1": "CBOStudents",
+                        "service2": "CBOStudentsWithXSres",
+                        "zoneId": "CBOUniversal",
+                        "contextId": "DEFAULT",
+                        "headers": {
+                            "mustuseadvisory": true,
+                            "requestType": "IMMEDIATE",
+                            "messageType": "REQUEST",
+                            "objectType": "CBOStudentsWithXSre",
+                            "requestAction": "QUERY",
+                            "Content-Type": "application/xml"
+                        }
+                    }
+                },
+                "prs": {
+                    "url": "<api end point>",
+                    "sessionToken": "<session token>",
+                    "sharedSecret": "<secret>",
+                    "headers": {
+                        "Accept": "application/xml"
+                    },
+                    "validation-url": "",
+                    "validation-service": ""
+                }
             },
             "cross": {
                 "enable": true,
@@ -245,6 +388,7 @@ The following examples configuration in JSON format.
                 "aws_secret_access_key":""
             },
             "cache": {
+                "enable": true,
                 "adapter": "memory",
                 "backup": "redis",
                 "redis": {
@@ -259,10 +403,17 @@ The following examples configuration in JSON format.
                 }
             }
         }
+        
+**Edit config environment variable, this will be used on the cronjob CLI process**        
+        
+        $ vi src/config/.env
+            
+        NODE_ENV=production
+        
 
 **Use configs in your code:**
 
-    var config = require('config');
+    var config = require('./lib/utils').config();
     ...
     var dbConfig = config.get('db.mongo.host');
     db.connect(dbConfig, ...);
@@ -290,8 +441,53 @@ Run Unit Test:
 
     $ cd src && mocha
 
+## Cron Job
+
+Docker crontab available on file: "cronjob/files/etc/ssl-cron"
+
+Cronjob using crontab:
+
+    0 0 * * * root NODE_CONFIG_DIR=/config /usr/bin/node /src/cli.js cache-list true >> /var/log/cron.log 2>&1
+    0 */2 * * * root NODE_CONFIG_DIR=/config /usr/bin/node /src/cli.js cache-list >> /var/log/cron.log 2>&1
+    0 0 * * * root NODE_CONFIG_DIR=/config /usr/bin/node /src/cli.js push-cedarlabs >> /var/log/cron.log 2>&1
+    0 */3 * * * root NODE_CONFIG_DIR=/config /usr/bin/node /src/cli.js pull-cedarlabs >> /var/log/cron.log 2>&1
+    
+Cronjob run manually:
+    
+    /usr/bin/node /src/cli.js cache-list true
+    /usr/bin/node /src/cli.js push-cedarlabs
+    /usr/bin/node /src/cli.js pull-cedarlabs
 
 
+## Table schema for reporting
+
+Table student:
+
+    CREATE TABLE `students` (
+      `id` varchar(100) NOT NULL,
+      `org_name` varchar(100) DEFAULT NULL,
+      `student_id` varchar(50) DEFAULT NULL,
+      `school_district` varchar(50) DEFAULT NULL,
+      `school` varchar(100) DEFAULT NULL,
+      `first_name` varchar(100) DEFAULT NULL,
+      `last_name` varchar(100) DEFAULT NULL,
+      `grade_level` int(11) DEFAULT NULL,
+      `ethnicity` varchar(100) DEFAULT NULL,
+      `gender` enum('Male','Female') DEFAULT NULL,
+      `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+      KEY `id` (`id`,`student_id`,`school_district`,`gender`,`grade_level`,`ethnicity`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=latin1
+
+Table student program:
+
+    CREATE TABLE `student_programs` (
+      `program_id` varchar(50) NOT NULL,
+      `student_id` varchar(50) NOT NULL,
+      `program_name` varchar(100) NOT NULL,
+      `cohorts` varchar(300) DEFAULT NULL,
+      `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+      PRIMARY KEY (`program_id`,`student_id`,`program_name`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 
 ### Configurations
 

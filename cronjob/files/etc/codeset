@@ -1,0 +1,2 @@
+# system-wide crontab
+0 1 * * * root NODE_CONFIG_DIR=/config /usr/bin/node /src/cli.js codeset >> /var/log/cron.log 2>&1

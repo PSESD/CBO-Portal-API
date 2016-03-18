@@ -65,7 +65,7 @@ TagController.createByOrgId = function (req, res) {
             return res.sendError(err);
         }
 
-        res.sendSuccess('Successfully Added', obj);
+        res.sendSuccess(res.__('data_added'), obj);
 
     });
 
@@ -90,7 +90,7 @@ TagController.getTagById = function (req, res) {
          * If tag is empty from database
          */
         if (!tag) {
-            return res.sendError('The tag not found in database');
+            return res.sendError(res.__('record_not_found', 'Tag'));
         }
 
         res.sendSuccess(tag);
@@ -113,7 +113,7 @@ TagController.deleteTagById = function (req, res) {
 
         if (err)  { return res.sendError(err); }
 
-        res.sendSuccess('Successfully deleted');
+        res.sendSuccess(res.__('data_deleted'));
 
     });
 
@@ -134,7 +134,7 @@ TagController.putTagById = function(req, res){
         if (err) { return res.sendError(err); }
 
         if (!obj) {
-            return res.sendError('Data not found');
+            return res.sendError(res.__('data_not_found'));
         }
 
         for (var prop in req.body) {
@@ -158,7 +158,7 @@ TagController.putTagById = function(req, res){
 
             if (err)  { return res.sendError(err); }
 
-            res.sendSuccess('Successfully updated!', obj);
+            res.sendSuccess(res.__('data_updated'), obj);
 
         });
 

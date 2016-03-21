@@ -178,6 +178,9 @@ function sentItEmail(message, params, done, err){
         "<pre><code>Before: " + JSON.stringify(diff.before) + '</code></pre>' +
         "<pre><code>After: " + JSON.stringify(diff.after) + '</code></pre>' +
         "<pre><code>Change: " + JSON.stringify(diff.change) + '</code></pre>';
+    if('SKIP_EMAIL' in process.env && process.env.SKIP_EMAIL === 'y'){
+        return done();
+    }
     utils.mailDev(message, subject, done);
 }
 

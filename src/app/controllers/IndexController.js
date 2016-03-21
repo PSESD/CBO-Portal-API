@@ -23,7 +23,7 @@ var IndexController = {
                   return res.sendError(err);
             }
 
-            res.sendSuccess('Ok');
+            res.sendSuccess('OK');
         });
     }
 

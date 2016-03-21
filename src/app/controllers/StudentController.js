@@ -900,8 +900,9 @@ StudentController.getStudents = function(req, res){
                     "gradeLevel": /*"N/A"*/"",
                     "schoolYear": /*"N/A"*/"",
                     "schoolName": /*"N/A"*/"",
-                    "attendance": /*"N/A"*/"",
-                    "behavior": 0,
+                    "attendanceCount": [],
+                    "behaviorCount": [],
+                    "riskFlag": [],
                     "onTrackToGraduate": /*"N/A"*/"",
                     "latestDate": ""
                 };
@@ -1033,7 +1034,7 @@ StudentController.createByOrgId = function(req, res){
          * If organization is empty from database
          */
         if(!organization){
-            return res.sendError('The organization not found in database');
+            return res.sendError(res.__('data_not_found'));
         }
 
         var brokerRequest = new Request({
@@ -1062,12 +1063,19 @@ StudentController.createByOrgId = function(req, res){
             }
 
             if(!user){
-                return res.sendError('User not update successfully');
+                return res.sendError(res.__('user_failed_to_update'));
             }
 
             obj.protect(req.user.role, null, req.user).save(function(err){
 
                 if(err){
+
+                    if(err.code && (err.code === 11000 || err.code === 11001)){
+
+                        err = res.__('errors.duplicate_student', { districtId: req.body.district_student_id, district: req.body.school_district });
+
+                    }
+
                     return res.sendError(err);
                 }
 
@@ -1322,6 +1330,12 @@ StudentController.putStudentById = function(req, res){
             obj.protect(req.user.role, null, req.user).save(function(err){
 
                 if(err){
+
+                    if(err.code && (err.code === 11000 || err.code === 11001)){
+
+                        err = res.__('errors.duplicate_student', { districtId: req.body.district_student_id, district: req.body.school_district });
+
+                    }
 
                     return res.sendError(err);
 

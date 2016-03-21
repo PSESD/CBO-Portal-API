@@ -156,30 +156,32 @@ xSre.prototype.getJson = function(){
 xSre.prototype.getStudentSummary = function(){
     this.justlog.info('XSRE - START STUDENT SUMMARY');
     var summary = {
-        gradeLevel: null,
-        schoolYear: null,
-        schoolName: null,
-        attendance: null,
-        behavior: null,
-        onTrackToGraduate: null,
-        latestDate: null,
-        latestDateTime: null
+        gradeLevel: "",
+        schoolYear: "",
+        schoolName: "",
+        attendanceCount: [],
+        behaviorCount: [],
+        attendanceRiskFlag: [],
+        onTrackToGraduate: "",
+        latestDate: "",
+        latestDateTime: ""
     };
 
     var json = this.getJson();
 
     var personal = this.getPersonal().getPersonal();
 
-    if(personal && personal.enrollment){
-        summary.gradeLevel = personal.enrollment.gradeLevel;
-        summary.schoolYear = personal.enrollment.schoolYear;
-        summary.schoolName = personal.enrollment.currentSchool;
+    if(personal && personal.xSre.enrollment){
+        summary.gradeLevel = personal.xSre.enrollment.gradeLevel;
+        summary.schoolYear = personal.xSre.enrollment.schoolYear;
+        summary.schoolName = personal.xSre.enrollment.schoolName;
     }
 
     var attendance = this.getAttendanceBehavior();
 
-    summary.attendance = attendance.getCurrentTotalAttendance();
-    summary.behavior = attendance.getCurrentTotalBehavior();
+    summary.attendanceCount = attendance.getCurrentTotalAttendance();
+    summary.behaviorCount = attendance.getCurrentTotalBehavior();
+    summary.attendanceRiskFlag = attendance.getRiskFlag();
     var attendanceSummary = attendance.calculateSummary();
     summary.latestDate = attendanceSummary.date.latest;
     summary.latestDateTime = attendanceSummary.date.max;

@@ -31,15 +31,15 @@ DummyController.index = function(req, res){
 
             if (err)  { return res.sendError(err); }
 
-            if(!user) { return res.sendError('User not found'); }
+            if(!user) { return res.sendError(res.__('record_not_found', 'User')); }
 
             Student.protect(user.role, { students: studentId }, user).findOne({_id: studentId, organization: orgId}, function (err, student) {
 
                 if (err)  { return res.sendError(err); }
 
-                if(!student) { return res.sendError('Student not found'); }
+                if(!student) { return res.sendError(res.__('record_not_found', 'User')); }
 
-                res.sendSuccess('Its OK');
+                res.sendSuccess('OK');
             });
 
             //Student.protect(user.role, null, user).find({organization: orgId}, function (err, students) {

@@ -411,7 +411,7 @@ StudentProgramController.deleteStudentById = function(req, res){
 
             if (err)  { return res.sendError(err); }
 
-            res.sendSuccess('Delete success');
+            res.sendSuccess(res.__('data_deleted'));
 
         });
 
